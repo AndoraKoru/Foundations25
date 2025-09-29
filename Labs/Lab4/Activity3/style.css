@@ -1,0 +1,15 @@
+.box{
+    width:200px;
+    height: 100px;
+    border: 0.5px rgb(255, 255, 255) solid;
+    border-radius: 1pc;
+    padding: 20px 20px 10px 20px;
+    margin: 25px;
+    background-color: rgb(228, 244, 244);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: rgb(50, 28, 145);
+    text-align: center;
+    box-shadow: 4px 4px 10px rgb(154, 161, 165);
+   
+}

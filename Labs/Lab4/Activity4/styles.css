@@ -1,12 +1,13 @@
 body {
-  /* Set a base font-size */
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1 {
-  /* Use px for font-size */
+  font-size: 36px;
 }
 h2 {
-  /* Use em for font-size */
+  font-size: 1.5em;
 }
 p {
-  /* Use rem for font-size */
+  font-size: 1rem;
 }
