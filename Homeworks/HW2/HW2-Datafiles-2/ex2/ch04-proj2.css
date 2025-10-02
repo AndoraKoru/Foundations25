@@ -6,21 +6,143 @@ body, section, header, div, p, h1, h2, h3, ul, li {
    margin: 0;
    padding: 0;
 }
+
 body {
    font-family: 'Open Sans', sans-serif;
    box-sizing: border-box;
    background-color: #e4e7eb;
+   font-size: 18px;
    font-weight: 300;
+   padding: 40px; /* In the future I would use em */
 }
+
+section {
+   width: 910px;
+   margin: 0 auto; /* zero top-bottom margin, auto left-right margin */
+   text-align: center; /* Puts the text in center */
+   box-shadow: 0px 0px 15px rgb(192, 191, 191);
+}
+
 header {
    margin-left: 20px;
 }
+
 h1 { 
-   text-align: center;
    font-weight: 600;
    font-size: 42px;
+   letter-spacing: 1.5px; /*the design seems to have more space between letters */
    padding: 10px 0;
+   margin: 10px;
 }
 
-/* add styles here */
+.column { /* Targets all three columns */
+   display: inline-block; /* required display */
+   width: 300px; /* required width */
+   background-color: white;
+   vertical-align: top;
+   /* Box-shadow would be so much prettier here, not including the H1 */
+}
 
+.column h3 {
+   padding: 1em; 
+   font-size: 24px; /* required size */
+   font-weight: 600; /* For my eye 700 would be more similar to the design */
+}
+   
+.featured { /* Middle column has different colours */ 
+   background-color: #2F4F4F;
+   color: white;
+}
+
+.column ul {list-style-type: none;} /* Hides the list bullets */
+.column ul li {
+   padding: 1em;
+   font-size: 1rem;
+}
+
+.column ul li:nth-child(even) { /* Every other li has a grey background */
+   background-color: rgba(47,59,64,0.35);
+}
+
+.column ul li span {
+   font-weight: 800;
+}
+
+.price { /* Targets all price sections */
+   font-size: 2.25rem; /* 36px */
+   font-weight: 800;
+   padding: 0.5em 0em;
+}
+
+.price.free {background-color: #5BB189}
+.price.standard {background-color: #4B0082}
+.price.professional {background-color: #EC632A}
+
+.column div { 
+   background-color: #3A6BA5;
+   border-radius: 5px;
+   margin: 2em 0.5em;
+   padding: 1em;
+   box-shadow: 3px 3px 1px rgba(0,0,0,0.2); /*Adds a see-through not blurry box-shadow */
+}
+
+.column div a {
+   display: block; /* Makes the whole button area clickable, not only the text */
+   color: white;
+   text-decoration: none; /* Takes off the underline */
+   text-align: center;
+}
+
+.column div:hover {background-color: #437CBF}
+
+.column span {
+   font-weight: 300;
+   font-size: 1rem;
+}
+
+.column ul li:nth-child(1),   /* Corrects the HTML text, adds capitalized letters. I would ideally cange the HTML instead*/
+.column ul li:nth-child(2),
+.column ul li:nth-child(4) {
+   text-transform: capitalize
+}
+
+#confidence {
+   background-color: #2F4F4F;
+   margin: 3em auto;
+   color: white;
+   padding: 2em;
+}
+
+#confidence h2 {
+   font-weight: 600;
+   letter-spacing: 1.25px; 
+}
+
+#confidence p {
+   font-weight: 300;
+   font-size: 1.125rem;
+   color: rgb(225, 225, 225); /* This text is a little less bright that true white */
+   padding-bottom: 0.5em; /* Adds whitespce before the list */
+}
+
+#confidence ul {
+   list-style-type: none; /* Hides the list bullets */
+}
+
+#confidence ul li {
+   background: url("checkmark.svg") no-repeat left center;
+   background-size: 24px;
+   padding-left: 40px; /* Makes room for "check" images */
+   margin: 1em 0;
+}
+
+#confidence ul li a {
+  font-style: italic;
+  color: #66c6e0;
+  font-weight: 600;
+}
+
+
+#confidence ul li a:visited {
+  color: #59dab8;
+}
