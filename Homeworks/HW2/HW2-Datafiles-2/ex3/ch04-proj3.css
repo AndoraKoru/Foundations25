@@ -52,7 +52,7 @@ header {
 #topbar a:visited {color: #5f3c9a}
 
 #topbar a:hover {
-   color: #a285d4;
+   color: #7658ab;
    transform: scale(1.1); /* Button growns bigger while hovering */
 }
 
