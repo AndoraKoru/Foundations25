@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+header {
+    background: #204f59;
+    height: 100vh
+}
+
+#topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 4em 4em 0 4em;
+}
+
+#topbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#topbar li {
+   padding: 1em 1.5em; /* Padding here so that menu items are aligned with last button */
+}
+
+#topbar li:last-child {
+    background: #ff715c;
+    border-radius: 50px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block; 
+}
+
+#topbar li:last-child:hover {
+    background: #ff9585;
+    color: white;
+    border-radius: 50px;
+    transform: scale(1.05); /* Button growns bigger while hovering */
+}
+
+
+#topbar a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;  
+}
+
+#topbar li:not(:last-child) a:hover {
+    transform: scale(1.05);
+    color: #ff715c;
+}
+
+#landingp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 20em;
+    padding-top: 25em;
+    color: white;
+}
+
+#landingp h1 {
+   font-size: 4rem;
+}
+
+#landingp h1 span {color: #aae5b5}
+
+#landingp p {
+    padding: 2em 0;
+}
+
+#landingp a {
+    padding: 1.5em 4em;
+    background: #4bb1bd;
+    border-radius: 50px;
+}
