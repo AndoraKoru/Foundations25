@@ -6,11 +6,122 @@ body, section, header, div, p, h1, h2, h3, ul, li, figure, figcaption {
    margin: 0;
    padding: 0;
 }
+
 body {
    font-family: 'Open Sans', sans-serif;
    box-sizing: border-box;
    background-color: #F0F4F8;
    font-weight: 300;
+   font-size: 16px;
 }
 
-/* add styles here */
+header {
+   background-image: url("./images/florence.jpg");
+   background-size: cover;
+   width: 100%;
+   min-width: 500px;
+}
+
+
+#topbar {
+   position: absolute;
+   background: url(./images/logo.png) no-repeat left center;
+}
+
+
+#topbar ul {
+   list-style: none;
+   justify-content: left;
+   margin: 2rem 6rem;
+}
+
+#topbar li {
+   display: inline-block; 
+   margin-right: 40px
+}
+
+#topbar a {
+   color: #51279B;
+   text-decoration: none;
+   font-weight: 600;
+}
+
+header h2 {
+   font-size: 48px;
+   color: white;
+   font-weight: 700;
+   padding-top: 3em;
+   padding-bottom: 1rem;
+   margin: 0 6rem;
+
+}
+
+header p {
+   font-size: 24px;
+   color: white;
+   padding-left: 0.3rem;
+   margin: 0 6rem;
+
+}
+
+header div a {
+   display: inline-block;
+   border-radius: 3px;
+   background-color: #51279B;
+   color: white;
+   text-decoration: none;
+   margin: 0.5rem 6rem 10rem;
+   padding: 1em 1.5em; /* The cushion inside the button */
+}
+
+main {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin: 1rem;
+   gap: 10px;
+
+}
+
+.card {
+   background: white;
+   padding-bottom: 0.5em;
+   
+}
+
+.card img {
+   width: 100%;
+   height: 220px;
+}
+
+.card h3 {
+   font-weight: 300;
+   font-size: 0.875rem;
+   padding: 0.75em 0.5em 0 0.5em;
+}
+
+.description {
+   font-weight: 300;
+   font-size: 0.75rem;
+   padding: 0.5em;
+}
+
+.social { /* Adds everything to children too */
+  display: flex;
+  font-size: 0.625rem;
+  gap: 2em;         /* space between items */
+  align-items: center;
+  margin: 0 0.9em;  
+}
+
+.heart {
+   background: url(./images/heart.png) no-repeat left center;
+   background-size: 1em 1em;
+   padding-left: 1.5em
+}
+
+.comment {
+   background: url(./images/comment.png) no-repeat left center;
+   background-size: 1em 1em;
+   padding-left: 1.5em
+}
