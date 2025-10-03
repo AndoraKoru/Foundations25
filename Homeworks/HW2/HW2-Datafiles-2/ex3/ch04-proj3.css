@@ -44,6 +44,16 @@ header {
    color: #51279B;
    text-decoration: none;
    font-weight: 600;
+   transition: transform 0.2s ease, color 0.2s ease;
+   display: inline-block; 
+
+}
+
+#topbar a:visited {color: #5f3c9a}
+
+#topbar a:hover {
+   color: #a285d4;
+   transform: scale(1.1); /* Button growns bigger while hovering */
 }
 
 header h2 {
@@ -72,7 +82,16 @@ header div a {
    text-decoration: none;
    margin: 0.5rem 6rem 10rem;
    padding: 1em 1.5em; /* The cushion inside the button */
+   transition: transform 0.2s ease, color 0.2s ease;
+   display: inline-block;
 }
+
+header div a:hover {
+   background-color: #321a5a;
+   color: white;
+   transform: scale(1.05); /* Button growns bigger while hovering */
+}
+
 
 main {
    display: flex;
@@ -107,11 +126,15 @@ main {
 }
 
 .social { /* Adds everything to children too */
-  display: flex;
   font-size: 0.625rem;
-  gap: 2em;         /* space between items */
-  align-items: center;
-  margin: 0 0.9em;  
+  margin: 0 0.9em;
+  white-space: nowrap;  /* Icons + text on one line */
+}
+
+.social span{
+   display: inline-block;
+   vertical-align: middle;
+   margin-right: 2em;
 }
 
 .heart {
