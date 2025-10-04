@@ -254,3 +254,60 @@ main {
     border-radius: 1em;
     width: 43%; /* I have no better idea for lining up the picture on the upper card and this one */
 }
+
+
+/* FOOTER */
+
+footer {
+    background: white;
+    color: #5b6060;
+    padding: 2em 5em;
+}
+
+.footertop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+/* The middle links */
+.feet {
+    list-style: none;
+    display: flex;
+    justify-content: cente;
+    gap: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+.feet a { /* THIS PART NEED TO SIT IN THE CENTER */
+    text-decoration: none;
+    color: #5b6060;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.socials img {
+    width: 1em;
+    height: auto;
+}
+
+/* Copyright text */
+
+.copyright {
+    font-size: 0.75em;
+    text-align: center;
+    margin: 1em 1em;
+}
+
