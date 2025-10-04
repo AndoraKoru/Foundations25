@@ -9,17 +9,19 @@ body {
     font-size: 16px;
     overflow-x: hidden; /* Fixes whitespace on the right edge */
 }
+
 header {
     background: #204f59;
 }
 
 #topbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     font-size: 1.5em;
-    padding: 2em 4em 0 4em;
+    padding: 1em 4em 1em 4em;
+    background: #204f59;
 }
 
 #topbar ul {
@@ -41,7 +43,7 @@ header {
 }
 
 #topbar li:last-child:hover {
-    background: #ff9585;
+    background: #ff5a41;
     color: white;
     border-radius: 50px;
     transform: scale(1.05); /* Button growns bigger while hovering */
@@ -93,7 +95,7 @@ header {
 }
 
 .hero-content a:hover {
-    background: #57b6c1;
+    box-shadow: #28626f 0 0 30px;
     transform: scale(1.05); /* Button growns bigger while hovering */
 }
 
@@ -158,33 +160,97 @@ main {
     gap: 4em;
 }
 
-.card {
+.card { /* THIS CARD GOES ON TOP OF FIXED NAV WHEN SCROLLING??? */
     display: flex;
     justify-content: space-between;
     background-color: white;
-    border-radius: 1.5em;
+    border-radius: 1em;
     overflow: hidden;
     width: 80%;
     margin: 4em 0;
+    box-shadow: #bec3c4 0px 20px 50px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-20px);
+    box-shadow: #bec3c4 0px 40px 50px;
 }
 
 .card img {
+    height: auto;
+    object-fit: cover;
+}
+
+.pinkGuy {
     width: 45%;
     height: auto;
     object-fit: cover;
 }
 
 .card div {
-    width: 55%;
-    padding: 4em;
+    padding: 4em; 
     text-align: left;
 }
 
 .smalltext {
-    padding: 2em 0 1.5em 0;
+    margin: 3em 0 2em 0;
 }
 
 .card h2 {
     font-size: 3.5em;
+}
+
+.teamtext {
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #777e7e;
+    padding: 1em 0 3em 0;
+}
+
+.card a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 1em 2em;
+    margin-bottom: 3em;
+}
+
+.button1 {
+    background: #ff715c;
+    padding: 1em 1.5em;
+    border-radius: 5em;
+    color: white;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block; 
+}
+
+.button1:hover {
+    background: #ff5a41;
+    color: white;
+    transform: scale(1.05); /* Button growns bigger while hovering */
+}
+
+.button2 {
+    color: rgb(112, 112, 112);
+    text-decoration: underline;  /* How to add dotted underline */
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block; 
+}
+
+.button2:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+.boldtext {
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 1.5em 0 0 3.5em;
+}
+
+.phone {
+    background: #e7f1f1;
+    margin: 3em 2.5em 3em 0;
+    border-radius: 1em;
+    width: 43%; /* I have no better idea for lining up the picture on the upper card and this one */
 }
