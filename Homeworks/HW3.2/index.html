@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second attempt after crying</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+    <section id="langingpage">
+        <header>
+            <nav class="navbar-container">
+                <div class="logo">Walsh</div>
+
+                <div class="hamburger">☰</div>
+
+                <div class="nav-right">
+                    <ul class="navbar-items">
+                        <li><a href="#">Demo site</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <a href="#" class="demo-button" >Request demo →</a>
+                </div>
+            </nav>
+        </header>
+
+        <section class="banner">
+            <div class="banner-container">
+                <div class="banner-text">
+
+                    <h1>Start working <br>
+                    <span class="highlight">faster</span> today
+                    </h1>
+
+                    <p>
+                        A full package with multiple possibilities that <br>
+                        will fit you perfectly. Start your Webflow <br>
+                        website right now!
+                    </p>
+
+                    <a href="#" class="arrow-button">
+                        <img src="/Images/WhiteArrow.png" alt="">
+                    </a>
+                </div>
+
+                <div class="banner-image">
+                    <img src="/Images/business-man.png" alt="Businessman">
+                </div>
+            </div>
+
+            <div class="client-logos">
+                <div class="logo-box"><img src="/Images/logoipsum-284.png" alt="Logo 2"></div>
+                <div class="logo-box"><img src="/Images/logoipsum-284.png" alt="Logo 2"></div>
+                <div class="logo-box"><img src="/Images/logoipsum-284.png" alt="Logo 2"></div>
+                <div class="logo-box"><img src="/Images/logoipsum-284.png" alt="Logo 2"></div>
+                <div class="logo-box"><img src="/Images/logoipsum-284.png" alt="Logo 2"></div>
+                <div class="logo-box"><img src="/Images/logoipsum-284.png" alt="Logo 2"></div>
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="card">
+            <div class="card-text">
+                <small>Our Team</small>
+
+                <h1>
+                    We make your <br>
+                    business stronger
+                </h1>
+
+                <p>
+                    Meet our team and who's behind Walsh Library <br>
+                    creation
+                </p>
+
+                <div class="card-buttons">
+                    <a href="#" class="getstarted-button">Get started →</a>
+                    <a href="#" class="learnmore-button">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="card-image">
+                    <img src="/Images/figure1.webp" alt="Pink man smiling looking up">
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-text">
+                <small>Features</small>
+                
+                <h1>
+                    We take your results <br>
+                    to the next level
+                </h1>
+                <div class="feature-item">
+                    <img class =features-icon src="/Images/features.png" alt="Icon for features">
+                    <p><strong>Scale for any organization</strong></p>
+                </div>
+            </div>
+            <div class="card-image">
+                <img src="/Images/figure2.png" alt="Phone app preview" class="Phone">
+            </div>
+        </section>
+    </main>
+
+    <section class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">Walsh</div>
+
+            <nav class="footer-navbar">
+                <a href="#">Landing</a>
+                <a href="#">Features</a>
+                <a href="#">About</a>
+                <a href="#">Team Members</a>
+                <a href="#">Licenses</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <div class="footer-socials">
+                <a href="#" target="_blank">
+                    <img src="Images/instagram.png" alt="Instagram icon">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="Images/facebook.png" alt="Facebook icon">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="Images/linkedin.png" alt="LinkedIn icon">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="Images/twitter.png" alt="Twitter icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2022 Walsh components. | All Rights reserved | Designed by JP</p>
+        </div>
+    </section>
+
+    <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navRight = document.querySelector('.nav-right');
+
+    hamburger.addEventListener('click', () => {
+        navRight.classList.toggle('active');
+    });
+    </script>
+
+</body>
+</html>

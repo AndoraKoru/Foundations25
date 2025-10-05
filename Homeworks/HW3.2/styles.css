@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 16px;
+    padding-top: 80px;}
+
+header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #244f57;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  background: #244f57;
+
+}
+
+
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* The logo is on the left, the other items are right */
+    align-items: center;
+    padding: 1em 10em 1em 10em; /* The margin so that header is pushed inside */
+    background: #244f57;
+
+}
+
+/* The hamburger icon */
+.hamburger {
+    display: none; /* hidden by default */
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+/* The logo */
+.logo { 
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+/* The right side */
+.nav-right {
+    display: flex; /* The right side itselt is a flexbox too */
+    align-items: center; /* The items are on the same level */
+    gap: 1.5em; 
+} 
+
+
+/* The navigation links */
+.navbar-items {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-items a {
+    color: white;
+    text-decoration: none;
+    
+    display: inline-block; /* Necessary for item to grow */
+    transition: transform 0.6s ease, color 0.2s ease;
+}
+
+.navbar-items a:hover {
+    color: #ff715c;
+    transform: scale(1.05);
+}
+
+/* The navigation BUTTON */
+.demo-button {
+    text-decoration: none;
+    color: white;
+    background: #ff715c;
+    border-radius: 50px;
+    padding: 1.5em 2em;
+    transition: transform 0.6s ease, color 0.2s ease;
+    display: inline-block; 
+}
+
+.demo-button:hover {
+    background: #ff5a41;
+    color: white;
+    border-radius: 50px;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+/* THE BANNER STARTS HERE */
+
+.banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5em 10em 0 10em; /* Banner text aligned with the logo */
+    
+    overflow: hidden;
+    position: relative; /* WHY???+ */
+    background: #244f57;
+
+}
+
+.banner-text {
+    flex: 1;
+    z-index: 2;
+} 
+
+.banner-text h1 {
+   font-size: 4rem;
+   font-weight: 800;
+   padding-bottom: 0.25em;
+}
+
+.highlight {
+  color: #aae5b5;
+}
+
+.banner-text p {
+    color: #caebf1;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    line-height: 1.5em;
+}
+
+.arrow-button {
+    margin: 2em 0 4em 0;
+    padding: 1.5em 3.5em;
+    background: #4bb1bd;
+    border-radius: 50px;
+
+    transition: transform 0.6s ease;
+    display: inline-block;
+}
+
+.arrow-button:hover {
+    transform: scale(1.05); /* Button growns bigger while hovering */
+}
+
+.arrow-button img {
+    height: 2em;
+    width: auto;
+}
+
+
+.hero-content a {
+  padding: 1em 3em;
+  background: #4bb1bd;
+  border-radius: 50px;
+
+  transition: transform 0.6s ease;
+  display: inline-block;
+}
+
+
+/* RIGHT SIDE: IMAGE */
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.banner-image img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+/* Soft shape behind image */
+.banner-container::before {
+  content: "";
+  position: absolute;
+  right: -200px;
+  top: 0;
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+/* THE CLIENT LOGO SECTION STARTS FROM HERE */
+
+.client-logos {
+    background: #244f57;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    border: #03d6fb 1px solid;
+}
+
+
+.client-logos img {
+    width: 100px;
+    filter: none;
+    filter: grayscale(100%);
+}
+
+.logo-box {
+    flex: 1; /* Everything takes equal space */
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    border: 1px solid rgba(0, 255, 238, 0.15);
+    opacity: 0.8;
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+
+
+
+
+
+
+
+/* THE MAIN STARTS FROM HERE */
+
+main {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card { /* THIS CARD GOES ON TOP OF FIXED NAV WHEN SCROLLING??? */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: #bec3c4 0px 20px 50px;
+
+  width: 77%;
+  height: 500px;
+  margin: 4em 0;
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.card-text {
+    flex: 1;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: #bec3c4 0px 40px 50px;
+}
+
+.card-image {
+  flex: 1;                       /* take half of the card */
+  display: flex;
+  justify-content: spa;
+  align-items: center;
+  overflow: hidden;               /* crop anything that overflows */
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           
+}
+
+.card-text small {
+    color: #000000;
+    padding: 2em 0em;
+}
+
+
+.card-text  {
+    color: #000000;
+    padding: 2em 0em
+}
+
+
+{}
+
+
+/* RESPONSIVENESS STARTS HERE */
+
+@media (max-width: 470px) {
+
+    /* Show icon on mobile */
+    .hamburger {
+        display: block
+    }
+
+    .body {
+        margin: 0;
+    }
+
+    .header {
+       margin-bottom: 0;
+    }
+
+    .navbar-container {
+        margin: 1em;
+        padding: 0 1em; /* smaller padding for mobile */
+        flex-direction: row;
+        justify-content: space-between; /* logo left, hamburger right */
+        align-items: center;
+    }
+
+    /* Hide nav in small screen */
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+    }
+
+    .nav-right.active {
+        display: flex;
+    }
+
+    /* Navbar items vertically stacked */
+     .navbar-items {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .demo-button {
+        margin: 1em 0;
+        width: 80%;
+    }
+
+
+/* BANNER RESPONSIVENESS STARTS HERE */
+    .banner-container {
+        flex-direction: column;
+        padding: 0em;
+        text-align: center;
+
+        margin-top: 0;      /* remove any top margin */
+        padding-top: 1em;
+
+        
+    }
+
+    .banner-text {
+        text-align: center;
+        flex: none;
+    }
+
+      .banner-text h1 {
+        font-size: 3rem; /* Smaller for mobile */
+        line-height: 1.2em;
+        padding-bottom: 0.5em;
+        padding-top: 0.75em;
+    }
+
+    .banner-text p {
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    .arrow-button {
+        background: #ff715c; 
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 2em auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0; /* Reset padding */
+    }
+
+    .arrow-button img {
+        height: 1.5em; /* Adjust arrow size inside the circle */
+        width: auto;
+    }
+
+    .banner-image {
+        order: 3; /* Push image below the text and button */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1em;
+    }
+
+    .banner-image img {
+        max-width: 80%; /* Make it smaller for mobile */
+        height: auto;
+    }
+
+    /* 5. Optional: soften background circle behind image */
+    .banner-container::before {
+        width: 300px;
+        height: 300px;
+        right: 50%;
+        transform: translateX(50%);
+        top: auto;
+        bottom: 0;
+    }
+
+
+    /* CLIENT LOGOS RESPONSIVENESS STARTS FROM HERE */
+    .client-logos {
+       display: flex; /* Should I pick grid or flexbox */
+       flex-wrap: wrap; /* allows logos to wrap onto new rows */
+       justify-content: center; /* centers logos horizontally */
+       align-items: center; /* centers logos vertically in each row */
+    }
+
+}
+
+
+{}
