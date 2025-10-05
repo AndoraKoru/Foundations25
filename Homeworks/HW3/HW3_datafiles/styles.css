@@ -5,98 +5,148 @@
 }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
     overflow-x: hidden; /* Fixes whitespace on the right edge */
 }
 
 header {
-    background: #204f59;
+  background: #204f59;
 }
 
+.menutoggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
 #topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 1.5em;
-    padding: 1em 4em 1em 4em;
-    background: #204f59;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1em;
+  padding: 1em 12em 1em 12em;
+  background: #204f59;
+
+  /* Logo on the left */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#topbar h3 {
+  color: white;
+  font-style: italic;
+  font-size: 2em;
 }
 
 #topbar ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 #topbar li {
-   padding: 1em 1.5em; /* Padding here so that menu items are aligned with last button */
+  padding: 1em 1.5em; /* Padding here so that menu items are aligned with last button */
 }
 
 #topbar li:last-child {
-    background: #ff715c;
-    border-radius: 50px;
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: inline-block; 
+  background: #ff715c;
+  border-radius: 50px;
+  transition: transform 0.6s ease, color 0.2s ease;
+  display: inline-block; 
 }
 
 #topbar li:last-child:hover {
-    background: #ff5a41;
-    color: white;
-    border-radius: 50px;
-    transform: scale(1.05); /* Button growns bigger while hovering */
+  background: #ff5a41;
+  color: white;
+  border-radius: 50px;
+  transform: scale(1.05); /* Button growns bigger while hovering */
 }
 
 #topbar a {
-    color: white;
-    text-decoration: none;
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: inline-block;  
+  color: white;
+  text-decoration: none;
+  transition: transform 0.6s ease, color 0.2s ease;
+  display: inline-block;  
 }
 
 #topbar li:not(:last-child) a:hover {
-    transform: scale(1.05);
-    color: #ff715c;
+  transform: scale(1.05);
+  color: #ff715c;
 }
 
 .hero {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 20em;
-    padding-top: 15em;
-    color: white;
+  display: flex;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;   /* I accidentally did everything on wider screen and now I have to start adjusting */
+  margin: 0 auto;
+  padding: 0 4em;      /* A little side padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  background: #204f59;
+  color: white;
+  padding: 10em 0 0 0;          /* vertical spacing only */
+}
+
+.hero-content {
+  flex: 1;                  /* takes equal space with image */
+  max-width: 50%;
+  padding-bottom: 4em;;
+}
+
+.businessman {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.businessman img {
+  width: 80%;
+  height: auto;
 }
 
 .hero-content h1 {
-   font-size: 4rem;
+  font-size: 3rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
 }
 
 .hero-content h1 span {color: #aae5b5}
 
 .hero-content p {
-    padding: 2em 0;
-    color: #c5d2d4;
-    font-size: 1.25em;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    line-height: 1.5em;
+  padding: 2em 0;
+  color: #c5d2d4;
+  font-size: 1em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.5em;
 }
 
 .hero-content a {
-    padding: 1.5em 4em;
-    background: #4bb1bd;
-    border-radius: 50px;
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: inline-block;
+  padding: 1em 3em;
+  background: #4bb1bd;
+  border-radius: 50px;
+
+  transition: transform 0.6s ease;
+  display: inline-block;
 }
 
 .hero-content a:hover {
-    box-shadow: #28626f 0 0 30px;
-    transform: scale(1.05); /* Button growns bigger while hovering */
+  transform: scale(1.05); /* Button growns bigger while hovering */
 }
 
 #arrow {width: 2em;} /* Arrow img size inside the button on landing page */
@@ -107,27 +157,9 @@ header {
   margin: 8em 0 0 0;
 }
 
-.logobar ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between; /* spread items across full width */
-  align-items: center;
-  margin: 0;              /* optional horizontal padding */
-  width: 100%;
-}
-
-.logobar li{
-    color: white;
-    font-size: 1.5em;
-    font-weight: 600;
-    border: 2px #4bb1bd solid;
-    padding: 2em;
-}
-
 .logobar {
   width: 100%;                  /* full screen width */
   margin: 0;
-  padding: 6em 0 0 0;
   overflow: hidden;
 }
 
@@ -145,7 +177,7 @@ header {
   flex: 1;                        /* all items take equal width */
   text-align: center;
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
   padding: 1.2em 0;
   border: 1px solid rgba(255,255,255,0.2); /* subtle dividers */
@@ -153,161 +185,419 @@ header {
 }
 
 main {
-    background-color: #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4em;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4em;
 }
 
 .card { /* THIS CARD GOES ON TOP OF FIXED NAV WHEN SCROLLING??? */
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 1em;
-    overflow: hidden;
-    width: 80%;
-    margin: 4em 0;
-    box-shadow: #bec3c4 0px 20px 50px;
-    transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: #bec3c4 0px 20px 50px;
+
+  width: 75%;
+  margin: 4em 0;
+  transition: transform 0.4s ease, color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-20px);
-    box-shadow: #bec3c4 0px 40px 50px;
+  transform: translateY(-20px);
+  box-shadow: #bec3c4 0px 40px 50px;
 }
 
 .card img {
-    height: auto;
-    object-fit: cover;
+  height: auto;
+  object-fit: cover;
 }
 
 .pinkGuy {
-    width: 45%;
-    height: auto;
-    object-fit: cover;
+  width: 45%;
+  height: auto;
+  object-fit: cover;
 }
 
 .card div {
-    padding: 4em; 
-    text-align: left;
+  padding: 2em; 
+  text-align: left;
 }
 
 .smalltext {
-    margin: 3em 0 2em 0;
+  margin: 4em 0 2em 0;
 }
 
 .card h2 {
-    font-size: 3.5em;
+  font-size: 2.5em;
 }
 
 .teamtext {
-    font-size: 1.5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #777e7e;
-    padding: 1em 0 3em 0;
+  font-size: 1.25rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #777e7e;
+  padding: 1.5em 0 3em 0;
 }
 
 .card a {
-    text-decoration: none;
-    font-size: 1.25rem;
-    padding: 1em 2em;
-    margin-bottom: 3em;
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding: 1em 2em;
+  margin-bottom: 3em;
 }
 
 .button1 {
-    background: #ff715c;
-    padding: 1em 1.5em;
-    border-radius: 5em;
-    color: white;
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: inline-block; 
+  background: #ff715c;
+  padding: 1em 1.5em;
+  border-radius: 5em;
+  color: white;
+
+  transition: transform 0.6s ease, color 0.2s ease;
+  display: inline-block; 
 }
 
 .button1:hover {
-    background: #ff5a41;
-    color: white;
-    transform: scale(1.05); /* Button growns bigger while hovering */
+  background: #ff5a41;
+  color: white;
+  
+  transform: scale(1.05); /* Button growns bigger while hovering */
 }
 
 .button2 {
-    color: rgb(112, 112, 112);
-    text-decoration: underline;  /* How to add dotted underline */
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: inline-block; 
+  color: rgb(112, 112, 112);
+  text-decoration: underline;  /* How to add dotted underline */
+  
+  transition: transform 0.6s ease, color 0.2s ease;
+  display: inline-block; 
 }
 
 .button2:hover {
-    color: black;
-    transform: scale(1.05);
+  color: black;
+  transform: scale(1.05);
 }
 
 .boldtext {
-    font-size: 1.5em;
-    font-weight: 600;
-    padding: 1.5em 0 0 3.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 1.5em 0 0 3.5em;
 }
 
 .phone {
-    background: #e7f1f1;
-    margin: 3em 2.5em 3em 0;
-    border-radius: 1em;
-    width: 43%; /* I have no better idea for lining up the picture on the upper card and this one */
+  background: #e7f1f1;
+  margin: 3em 2.5em 3em 0;
+  border-radius: 1em;
+  width: 43%; /* I have no better idea for lining up the picture on the upper card and this one */
 }
-
 
 /* FOOTER */
 
 footer {
-    background: white;
-    color: #5b6060;
-    padding: 2em 5em;
+  font-family:'Inter', sans-serif;
+  background: white;
+  color: #959d9d;
+  border-top: 0.5px solid #ededed;
+  padding: 3em 2em; /* Walsh and socials in line with a card */
 }
 
 .footertop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.logo {
-    width: 50px;
-    height: auto;
+/* The logo */
+.footertop p {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2em;
+  color: black;
 }
 
 /* The middle links */
 .feet {
-    list-style: none;
-    display: flex;
-    justify-content: cente;
-    gap: 3em;
-    margin: 0;
-    padding: 0;
+  display: flex;
+
+  list-style: none;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
 }
 
-.feet a { /* THIS PART NEED TO SIT IN THE CENTER */
-    text-decoration: none;
-    color: #5b6060;
+.feet a { /* HELP! The middle item in flexbow is currently feet. It is dictated by the size of Walsh and does not stay in the true center. How can middle item stay in true center with flexboz? I spent 2 hours trying to do that :D */
+  text-decoration: none;
+  color: #959d9d;
+  font-size: 0.9em;
+  
+  transition: color 0.3s;
+}
+
+.feet a:hover { 
+  color: #ff715c;
 }
 
 .socials {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
+  list-style: none;
+  display: flex;
+  /* flex-direction: row – I do not have to add that because flexbow is by default a row  */ 
+  gap: 2em;
 }
 
 .socials img {
-    width: 1em;
-    height: auto;
+  width: 1em;
+  height: auto;
+  cursor: pointer; /* Makes images clickable because I forgot to add "a" to HTML. Better would be this: <li><a href="#"><img src="/Images/instagram.png" alt="Instagram"></a></li> */
+  transition: opacity 0.2s;
+}
+
+.socials img:hover {
+  opacity: 0.7;
 }
 
 /* Copyright text */
-
 .copyright {
     font-size: 0.75em;
     text-align: center;
-    margin: 1em 1em;
+    padding-top: 3em;
 }
 
+/* Responsiveness */
+
+@media (max-width: 470px) {
+  /* Navbar hamburger setup */
+  .menutoggle {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  #topbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+  }
+
+  #topbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #204f59;
+    padding: 1em 0;
+  }
+
+  #topbar ul.active {
+    display: flex;
+  }
+
+  #topbar li {
+    text-align: center;
+    padding: 0.8em 0;
+  }
+
+  /* Keep WALSH on left */
+  #topbar h3 {
+    margin-right: auto;
+  }
+
+  .hero {
+    flex-direction: column;         /* stack vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8em 2em 4em 2em;
+  }
+
+  /* Make sure text & button come first */
+  .hero-content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Button becomes a circle */
+  .hero-content a {
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border-radius: 50%;
+    background: #ff715c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5em;  /* space below paragraph */
+    margin-bottom: 2em; /* space above image */
+  }
+
+  #arrow {
+    width: 1.5em;
+  }
+
+  /* Image below text + button */
+  .businessman {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .businessman img {
+    width: 80%;         /* larger image on mobile */
+    max-width: 400px;   /* optional limit */
+    margin-top: 0;      /* spacing already handled above */
+  }
+  
+.logobar ul {
+  display: grid;                      /* use grid instead of flex */
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  width: 100%;
+  margin: 2em 0;
+  padding: 0;
+}
+
+.logobar li {
+  text-align: center;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 1.5em 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+}
+
+/* RESPONSIVE MAIN */
+@media (max-width: 470px) {
+  main {
+    gap: 2em;
+    padding-top: 6em; /* ensures space under fixed navbar */
+  }
+
+  .card {
+    flex-direction: column;      /* stack text and image */
+    align-items: center;
+    width: 90%;
+    margin: 2em 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .card div {
+    padding: 2em 1.5em;
+    text-align: center;
+  }
+
+  .card h2 {
+    font-size: 2rem;
+  }
+
+  .smalltext {
+    margin: 1em 0;
+    font-size: 1rem;
+  }
+
+  .teamtext {
+    font-size: 1rem;
+    padding: 1em 0 2em 0;
+  }
+
+  .boldtext {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1em 0;
+  }
+
+  /* Center and size buttons */
+  .button1,
+  .button2 {
+    display: inline-block;
+    margin: 0.5em auto;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .button1 {
+    padding: 0.8em 2em;
+    border-radius: 50px;
+  }
+
+  .button2 {
+    text-decoration: underline;
+  }
+
+  /* Make images smaller and move below text */
+  .pinkGuy,
+  .phone {
+    order: 2;           
+    width: 90%;
+  }
+
+  .phone {
+    background: none;     /* remove the light blue box background */
+  }
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 470px) {
+  footer {
+    padding: 2em 1.5em;
+    text-align: left;
+  }
+
+  .footertop {
+    flex-direction: column;       /* stack vertically */
+    align-items: flex-start;      /* left-align text sections */
+    gap: 2em;
+  }
+
+  .footertop p {
+    text-align: left;             /* logo text left */
+  }
+
+  .feet {
+    flex-direction: column;       /* stack links */
+    align-items: flex-start;      /* left-align links */
+    gap: 1em;
+  }
+
+  .feet a {
+    font-size: 1em;
+  }
+
+  /* Center the socials only */
+  .socials {
+    width: 100%;
+    justify-content: center;      /* center horizontally */
+    gap: 1.5em;
+    margin-top: 1em;
+  }
+
+  .socials img {
+    width: 1.3em;
+  }
+
+  .copyright {
+    text-align: left;
+    font-size: 0.8em;
+    padding-top: 2em;
+  }
+}

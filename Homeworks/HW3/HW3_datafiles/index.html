@@ -6,9 +6,13 @@
     <title>My first webpage</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
+
+
 <body>
     <header>
         <nav id="topbar">
+            <h3>WALSH</h3>
+            <button class="menutoggle" aria-label="Toggle menu">☰</button>
             <ul>
                 <li><a href="#">Demo site</a></li>
                 <li><a href="#">Home</a></li>
@@ -18,17 +22,21 @@
             </ul>
         </nav>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>
-                    Start working <br><span>faster</span> today
-                </h1>
+       <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                <h1>Start working <br><span>faster</span> today</h1>
                 <p>
                     A full package with multiple possibilities that <br>
                     will fit you perfectly. Start your Webflow <br>
                     website right now!
                 </p>
                 <a href="#"><img src="Images/WhiteArrow.png" alt="arrow icon" id="arrow"></a>
+                </div>
+
+                <div class="businessman">
+                <img src="/Images/business-man.png" alt="">
+                </div>
             </div>
         </section>
 
@@ -42,12 +50,21 @@
                 <li>TATE</li>
             </ul>
         </section>
+
+        <script>
+            const menuToggle = document.querySelector('.menutoggle');
+            const navMenu = document.querySelector('#topbar ul');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        </script>
     </header>
 
     <main>
         <section class="card">
             <div>
-                <p class="smalltext">Our Team</p>
+                <p class="smalltext"> ● Our Team</p>
                 <h2>We make your <br>
                 business stronger</h2>
                 <p class="teamtext">Meet our team and who's behind Walsh library <br>
@@ -61,7 +78,7 @@
 
         <section class="card">
             <div>
-                <p class="smalltext">Features</p>
+                <p class="smalltext"> ● Features</p>
                 <h2>We take your results to the next level</h2>
                 <p class="boldtext">Scale for any organization.</p>
             </div>
@@ -73,7 +90,7 @@
     <footer>
         <nav id="footerbar">
             <div class=footertop>
-                <p>WALSH</p>
+                <p>Walsh</p>
 
                 <ul class="feet">
                     <li><a href="#">Landing</a></li>
@@ -92,7 +109,7 @@
                     <li><img src="/Images/twitter.png" alt=""></li>
                 </ul>
             </div>
-            <p class="copyright">© Walsh components. | All Rights reserved | Designed by JP</p>
+            <p class="copyright">© 2022 Walsh components. | All Rights reserved | Designed by JP</p>
 
         </nav>
     </footer>
