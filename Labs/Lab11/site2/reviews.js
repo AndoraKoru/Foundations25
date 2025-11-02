@@ -53,7 +53,20 @@ randomBtn.addEventListener('click', ()=> {
 
 // Create exactly the same but instead random index start from the value, which is currentIndex (could be zero, but click next is 1, click prev -1; when you reach zero, it will start from the last one and go back-forth).
 
-const currentIndex =
+  let currentIndex = 0;
 
+nextBtn.addEventListener('click', ()=> {
+  currentIndex++;
+  if (currentIndex > reviews.length-1) {
+    currentIndex = 0;
+  }
+  showReview(currentIndex)
+});
 
-
+prevBtn.addEventListener('click', ()=> {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = reviews.length-1;
+  }
+  showReview(currentIndex)
+});
