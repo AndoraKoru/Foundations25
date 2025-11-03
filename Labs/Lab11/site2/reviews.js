@@ -51,7 +51,6 @@ randomBtn.addEventListener('click', ()=> {
   showReview(randomIndex);
 });
 
-// Create exactly the same but instead random index start from the value, which is currentIndex (could be zero, but click next is 1, click prev -1; when you reach zero, it will start from the last one and go back-forth).
 
   let currentIndex = 0;
 
