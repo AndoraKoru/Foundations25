@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Tea Store Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  
+  <!-- Header -->
+<header class="site-header">
+  <nav class="nav-outer">
+    <div class="nav-inner">
+
+      <!-- Left side navigation -->
+      <a href="/" class="nav-logo">TeaStore</a>
+
+      <!-- Right side navigation -->
+      <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#Homepage" class="nav-link">Homepage</a>
+          </li>
+          <li class="nav-item">
+            <a href="#OurStory" class="nav-link">Our Story</a>
+          </li>
+          <li class="nav-item">
+            <a href="#TheStore" class="nav-link">The Store</a>
+          </li>
+          <li class="nav-item">
+            <a href="#Conact" class="nav-link">Contact</a>
+          </li>
+
+          <div class = "nav-icons">
+            <li class="nav-item">
+              <a href="#account" class="nav-icon" aria-label="Account">
+                <img
+                  src="/Icons/account.svg"
+                  alt=""
+                  class="nav-icon-image"
+                  aria-hidden="true"
+                >
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#cart" class="nav-icon" aria-label="Cart">
+                <img
+                  src="/Icons/cart.svg"
+                  alt=""
+                  class="nav-icon-image"
+                  aria-hidden="true"
+                >
+              </a>
+            </li>
+          </div>
+    </div>
+  </nav>
+</header>
+
+  <main>
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero-background-image" data-parallax data-speed="0.05">
+        <img src="/Images/teaTable.jpg" alt="Japanese tea image" />
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">
+          READY TO UNLEASH YOUR <br> <span> PRODUCTIVE </span>SELF?
+        </h1>
+        <p class="hero-subtitle">
+          With our Japanese tea you will enjoy a healthy caffeine kick <br>
+          without the quick and harsh comedown.
+        </p>
+
+
+        <div class="hero-cta">
+          <a href="/store" class="hero-cta-button">
+            <img
+              src="/Icons/Arrow.svg"
+              alt="Offwhite-arrow"
+              class="hero-cta-icon"           
+            >
+            <span class="hero-cta-text">Yes, unleash!</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Story / explanation section -->
+    <section class="reasons-upper">
+      <div class="reasons-content">
+        <div class="reasons-media">
+          <img src="images/working-team.jpg" alt="A video about green tea" />
+        </div>
+
+        <div class="reasons-text">
+          <h2>“But green tea never worked for me before...”</h2>
+          <p>
+            Exactly – because this is the first time you’re drinking tea that was
+            grown, harvested, and crafted the way green tea is meant to be.
+            Our green teas open a new world for you, because…
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reasons section -->
+    <section class="reasons-lower">
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <h3>SMOOTH ENERGY</h3>
+          <p>Green tea creates a smooth caffeine feeling.</p>
+        </div>
+
+        <div class="reason-card">
+          <h3>NO JITTERS</h3>
+          <p>You get steady focus without the harsh crash.</p>
+        </div>
+
+        <div class="reason-card">
+          <h3>FOCUSED MIND</h3>
+          <p>Gentle caffeine plus L-theanine helps you concentrate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials + CTA section -->
+    <section class="testimonials-section">
+      
+      <div class="testimonials-bg" data-parallax data-speed="0.25">
+          <img src="/Images/harvestOne.jpg" alt="Tea fields in the mist">
+        </div>
+
+        <div class="testimonials-container">
+          <!-- Moving testimonials bar -->
+          <div class="testimonials-bar">
+            <div class="testimonials-track">
+              <figure class="testimonial-item">
+                <blockquote>“I get smooth energy all day without jitters.”</blockquote>
+                <figcaption>Clarissa Forest</figcaption>
+              </figure>
+
+              <figure class="testimonial-item">
+                <blockquote>“This is the only tea that replaced my coffee.”</blockquote>
+                <figcaption>Alex P.</figcaption>
+              </figure>
+
+              <figure class="testimonial-item">
+                <blockquote>“Clean focus, no crash. I’m converted.”</blockquote>
+                <figcaption>Daichi M.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Store CTA below the bar -->
+          <div class="testimonials-cta">
+            <a href="/store" class="store-button">
+              <span>To the store</span>
+            </a>
+          </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-nav">
+      <a href="#">Homepage</a>
+      <a href="#">Our Story</a>
+      <a href="#">The Store</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="container footer-social">
+      <a href="#" aria-label="Instagram">
+        <img src="/Icons/instagram.svg" alt="" class="footer-icon">
+      </a>
+
+      <a href="#" aria-label="Facebook">
+        <img src="/Icons/facebook.svg" alt="" class="footer-icon">
+      </a>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
