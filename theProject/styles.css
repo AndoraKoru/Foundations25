@@ -429,7 +429,7 @@ img {
 
 /* CTA button centered over image */
 
-.testimonials-cta {
+.store-cta {
   display: flex;
   justify-content: center;
 }
@@ -499,9 +499,8 @@ img {
   display: block;
 }
 
-
 /* =========================================
-   RESPONSIVE: tablet & mobile adjustments
+   LandingPage Responsiveness
    ========================================= */
 
 /* Tablet-ish breakpoint */
@@ -601,4 +600,524 @@ img {
   .hero-cta-icon {
     width: 3.5rem;
   }
+}
+
+/* STORYPAGE CSS */
+
+.story-hero {
+  position: relative;
+  min-height: 55vh;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: -1;
+}
+
+.story-hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 9rem 5rem 5rem;
+}
+
+.story-hero-title {
+  margin: 3em 0;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+.story-hero-title span {
+  display: block;
+  font-style: italic;
+}
+
+/* --------------------
+   Story sections
+---------------------*/
+
+.story-section {
+  background-color: #f4f2ee;
+  padding: 5rem 0 4rem;
+}
+
+.story-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.story-card {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* letting image and text share the row */
+.story-image,
+.story-text {
+  flex: 1 1 0;
+}
+
+.story-image img {
+  width: 100%;
+  max-height: 400px; 
+  object-fit: cover;
+}
+
+/* second row: flipping the order – image on right, text on left */
+.story-card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+.story-text h2 {
+  margin: 0 0 1.25rem;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  color:#3a3a32
+}
+
+.story-text h2 span {
+  font-style: italic;
+}
+
+.story-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #343434;
+}
+
+/* SOME videos track */
+
+.some-section {
+  background-color: #f4f2ee;
+  padding: 5rem 0 5rem;
+  border-bottom:solid 1px #b9b7b0;
+}
+
+.some-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 3rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.some-left,
+.some-right {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #333333;
+}
+
+.some-bar {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.some-video img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* center image */
+.some-video:nth-child(2) img {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.story-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.store-cta {
+  margin-top: 3.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------
+   Blog hero
+---------------------*/
+
+.blog-hero {
+  position: relative;
+  min-height: 55vh;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* background image */
+.blog-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.blog-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: -1;
+}
+
+/* hero text */
+.blog-hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 9rem 5rem 5rem;
+}
+
+.blog-hero-heading {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 100;
+  line-height: 1.25;
+  padding: 3em 0;
+}
+
+.blog-hero-heading span {
+  display: block;
+  font-style: italic;
+}
+
+/* --------------------
+   Blog cards list
+---------------------*/
+
+.blog-list {
+  background-color: #f4f2ee;
+  padding: 3.5rem 0 5rem;
+}
+
+.blog-list-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 3rem;
+
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* single card */
+
+.blog-card {
+  flex: 1 1 0;
+  background-color: #f7f6f2;
+  border: 1px solid #b9b7b0;
+  border-radius: 2px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 210px;          /* adjust for how tall you want the image */
+  object-fit: cover;
+  display: block;
+}
+
+/* text block inside card */
+.blog-card-body {
+  flex: 1;
+  padding: 1.2rem 1.5rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.blog-card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-card-text {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #363636;
+}
+
+/* "Read more" button inside card */
+
+.blog-card-button {
+  margin-top: 1.4rem;
+  align-self: stretch;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.6rem 1rem;
+  border: 1px solid #b9b7b0;
+  background-color: #f7f6f2;
+
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.blog-card-button span {
+  white-space: nowrap;
+}
+
+.blog-card-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+
+
+
+
+
+
+/* -------------
+   Header
+-------------- */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.header-link {
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  opacity: 1;
+}
+
+.header-icon img {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* -------------
+   Hero
+-------------- */
+
+.store-hero {
+  position: relative;
+  min-height: 45vh;
+  overflow: hidden;
+}
+
+.store-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* optional: light darken overlay for nav readability */
+.store-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+/* -------------
+   Products grid
+-------------- */
+
+.store-products {
+  padding: 4rem 0 5rem;
+  background-color: #f4f2ee;
+}
+
+.store-products-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: 3rem 2rem;
+}
+
+/* single card */
+
+.product-card {
+  background-color: #f7f6f2;
+  border: 1px solid #c2beb5;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.product-title {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.product-description {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+}
+
+.product-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.product-text {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+}
+
+.product-price {
+  margin: 0.7rem 0 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* button */
+
+.product-button {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 0;
+  border: 1px solid #c2beb5;
+  background-color: #f7f6f2;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* wide card on bottom right */
+
+.product-card--wide {
+  grid-column: span 2;
+}
+
+.product-image--wide img {
+  height: 190px;          /* taller image for the wide card */
+  object-fit: cover;
 }
