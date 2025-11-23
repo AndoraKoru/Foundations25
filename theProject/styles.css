@@ -1,7 +1,4 @@
-/* --------------------
-   Global base styles
----------------------*/
-
+/* GLOBAL STUFF */
 *,
 *::before,
 *::after {
@@ -22,9 +19,15 @@ body {
   font-size: 16px;
 }
 
-/* Simple utility container (for footer, etc.) */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* containers */
 .container {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 1.5rem;
 }
@@ -39,154 +42,168 @@ img {
   display: block;
 }
 
-.hero-background-image,
+.hero-home-background-image,
 .testimonials-bg {
   will-change: transform;
 }
 
+/* NAVIGATION CSS */
 
-/* --------------------
-   Header / Navigation
----------------------*/
-
-.site-header {
+/* Header layout */
+header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;
-}
-
-.nav-outer {
-  padding: 1.25rem 3rem;
-  background: transparent;   /* no bar */
-  border: none;    
-}
-
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 2rem 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-left: 1px solid #d1d1d1;
-  border-right: 1px solid #d1d1d1
-  
+  color: #f7f3ea;
+  z-index: 20;
+  /* Ensures header appears above background image */
 }
 
-.nav-logo {
+.logo {
   font-weight: 700;
   letter-spacing: 0.06em;
   font-size: 1rem;
-  color: #F4F2EE;
-  margin: 1rem;
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Right side: links + icons */
+.header-right,
 .nav-menu {
-  list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid #d1d1d1;
-  padding-left: 1rem;
+  gap: 1.5rem;
 }
 
+/* Navbar links */
+.nav-menu a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+/* Animated white line underline */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  /* distance under the text */
+  width: 0;
+  /* start hidden */
+  height: 1px;
+  /* line thickness */
+  background: currentColor;
+  /* same color as the text */
+  transition: width 0.5s ease;
+  /* animate left to right in 0.5s */
+}
+
+/* On hover grow underline from left to right */
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-icons,
 .nav-item {
-    transition: transform 0.6s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.nav-item:hover {
-    transform: scale(1.05);
-}
-
-.nav-link {
-    font-size: 0.95rem;
-    color: #f7f3ea;
-    opacity: 0.9;
-}
-
-.nav-link:hover {
-    opacity: 1;
-}
-
-.nav-icons {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    padding-left: 1rem;
-    border-left: 1px solid #d1d1d1;
-
-}
-
+/* Icon links */
 .nav-icon {
-  width: 3rem;
-  height: 3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transform-origin: center;
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
-.nav-icon:hover {
-    transform: scale(1.15);
-}
-
-
-.icon-user,
-.icon-cart {
+.nav-icon-image {
   width: 1.1rem;
   height: 1.1rem;
 }
 
+.nav-icon:hover {
+  transform: scale(1.05);
+}
 
-/* Hero section */
+.active {
+  font-weight: 600;
+}
 
-.hero {
+/*https://www.w3schools.com/howto/howto_js_mobile_navbar.asp – the link I learned from. However, the hamburger icon does not appear. 
+
+/* Hamburger icon – hidden on big screens */
+header .icon {
+  display: none;
+  font-size: 1.4rem;
+  color: #f7f3ea;
+  text-decoration: none;
+}
+
+/* NAVIGATION RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  /* Show hamburger on small screens */
+  header .icon {
+    display: block;
+  }
+
+  /* Hide right side (links + icons) by default */
+  #myLinks {
+    display: none;
+    /* hidden until toggled */
+    flex-direction: column;
+    /* when shown, stack content vertically */
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Stack links vertically */
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+}
+
+/* HERO SECTION */
+
+.hero-home {
   position: relative;
   min-height: 55vh;
   color: #F4F2EE;
   overflow: hidden;
 }
 
-/* Background image */
-.hero-background-image {
+.hero-home-background-image {
   position: absolute;
   inset: 0;
   z-index: -2;
-  will-change: transform;  /* for parallax */
+  will-change: transform;
+  /* for parallax */
   top: -20vh;
   bottom: -20vh;
-
-  
 }
 
-.hero-background-image img {
+.hero-home-background-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Dark overlay to improve text contrast 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-    background: linear-gradient(
-    to right,
-    rgba(4, 4, 4, 0.65) 0%,
-    rgba(0, 0, 0, 0.45) 5%,
-    rgba(0, 0, 0, 0.15) 100%
-    );
-}
-*/
-
-/* Text block on the left */
-.hero-content {
-  position:relative;
+/* Text on the left */
+.hero-home-content {
+  position: relative;
   margin-left: 6vw;
   margin-right: auto;
   padding-top: 15vh;
@@ -204,32 +221,29 @@ img {
 
 .hero-title span {
   font-style: italic;
-  /* color: #D9EBD1; */
   color: #c4edb3;
 }
 
-.hero-subtitle {
+.hero-home-subtitle {
   margin: 0 0 1.75rem;
   font-size: 1rem;
   color: #F4F2EE;
   font-weight: 100px;
-    line-height: 140%;
+  line-height: 140%;
 }
 
-/* CTA in hero */
 .hero-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    transform-origin: left center;
-    transition: transform 0.6s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transform-origin: left center;
+  transition: transform 0.6s ease, color 0.2s ease;
 }
 
 .hero-cta:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
-
 
 .hero-cta-button {
   display: inline-flex;
@@ -255,32 +269,72 @@ img {
   color: rgba(247, 243, 234, 0.85);
 }
 
-/* ----------------------------
-   Story / explanation section
------------------------------*/
+/* HERO RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  .hero-home {
+    width: 100%;
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  /* Letting image breathe a bit*/
+  .hero-background-image {
+    top: -10vh;
+    bottom: -10vh;
+  }
+
+  .hero-home-content {
+    margin: 1rem 6rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-home-subtitle {
+    max-width: 300px;
+    font-weight: 100;
+  }
+
+  .hero-cta {
+    margin-top: 1.5rem;
+    width: 50%;
+  }
+
+  .hero-cta-button {
+    width: 100%;
+  }
+
+  .hero-cta-icon {
+    width: 7rem;
+  }
+}
+
+/* STORY-HERO CSS */
 
 .reasons-upper {
-  background-color: #f1efe9;      /* same beige as cards background area */
+  background-color: #f1efe9;
   padding: 4.5rem 0 3rem;
 }
 
 .reasons-content {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 1.5rem;
 
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+
+  display: flex;
+  flex-direction: row;
   gap: 3rem;
   align-items: center;
 }
 
 .reasons-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 2px;
   object-fit: cover;
+  /* Why this */
 }
 
 .reasons-text h2 {
@@ -296,9 +350,48 @@ img {
   line-height: 1.6;
 }
 
-/* ----------------------------
-   Reasons – three cards
------------------------------*/
+.reason-card {
+  background-color: #f7f6f2;
+  border: 1px solid #b6b6b6;
+  padding: 2rem 1.75rem;
+  border-radius: 2px;
+
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* animation for hover */
+  transition: transform 0.6s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect: move up slightly and add shadow */
+.reason-card:hover {
+  transform: translateY(-4px);
+  /* move card up a little */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 640px) {
+  .reasons-upper {
+    padding: 3rem 0 3rem;
+  }
+
+  .reasons-content {
+    flex-direction: column;
+    /* stack media and text */
+    gap: 2rem;
+    /* slightly smaller gap on mobile (optional) */
+  }
+
+  .reasons-media,
+  .reasons-text {
+    width: 100%;
+    /* make sure each takes full width */
+  }
+}
+
+/* REASON CARDS */
 
 .reasons-lower {
   background-color: #f1efe9;
@@ -306,21 +399,23 @@ img {
 }
 
 .reasons-grid {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 1.5rem;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   gap: 2rem;
 }
 
 .reason-card {
   background-color: #f7f6f2;
-  border: 1px solid #b9b7b0;    
+  border: 1px solid #b9b7b0;
   padding: 2rem 1.75rem;
   border-radius: 2px;
-    border: 2px solid #54604A;
+  border: 2px solid #b6b6b6;
+  ;
 
 }
 
@@ -340,26 +435,37 @@ img {
   color: #33332e;
 }
 
-/* ----------------------------
-   Testimonials + CTA section
------------------------------*/
+/* REASON CARD RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  .reasons-grid {
+    flex-direction: column;
+  }
+
+}
+
+/* TESTIMONIALS */
 
 .testimonials-section {
   position: relative;
   padding: 5rem 0 6rem;
   color: #f5f3ee;
   overflow: hidden;
-    min-height: 30vh;          /* or 500px – how tall you want the band */
+  min-height: 30vh;
+  /* or 500px – how tall you want the band */
 
 }
 
 /* background image from HTML */
 .testimonials-bg {
- position: absolute;
+  position: absolute;
   left: 0;
   right: 0;
-  top: -10vh;                /* extend 20vh above */
-  bottom: -40vh;             /* extend 20vh below */
+  top: -10vh;
+  /* extend 20vh above */
+  bottom: -40vh;
+  /* extend 20vh below */
   z-index: -2;
 }
 
@@ -382,7 +488,7 @@ img {
   position: relative;
   z-index: 1;
 
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 1.5rem;
 
@@ -396,7 +502,8 @@ img {
 
 .testimonials-bar {
   width: 100%;
-  overflow: hidden; /* important for the scrolling effect */
+  overflow: hidden;
+  /* important for the scrolling effect */
 
 }
 
@@ -408,7 +515,8 @@ img {
 }
 
 .testimonial-item {
-  flex: 0 0 400px;   /* fixed width: 400px */
+  flex: 0 0 400px;
+  /* fixed width: 400px */
   max-width: 400px;
   text-align: center;
 }
@@ -448,9 +556,9 @@ img {
   text-transform: uppercase;
 
   background-color: #f7f6f2;
-  border: 2px solid #54604A; 
+  border: 2px solid #54604A;
   border-radius: 2px;
-  
+
   transition: transform 0.25s ease, background-color 0.2s ease;
 }
 
@@ -459,12 +567,11 @@ img {
   background-color: #ffffff;
 }
 
-/* --------------------
-   Footer
----------------------*/
+/* FOOTER CSS */
 
 .site-footer {
-  background-color: #f1efe9;   /* same beige as content background */
+  background-color: #f1efe9;
+  /* same beige as content background */
   padding: 2.5rem 0 3rem;
   font-size: 0.85rem;
   color: #3a3a32;
@@ -485,7 +592,7 @@ img {
   letter-spacing: 0.04em;
 }
 
-/* Bottom row: social icons */
+/* Bottom row */
 
 .footer-social {
   display: flex;
@@ -499,108 +606,7 @@ img {
   display: block;
 }
 
-/* =========================================
-   LandingPage Responsiveness
-   ========================================= */
 
-/* Tablet-ish breakpoint */
-@media (max-width: 960px) {
-
-  .nav-outer {
-    padding: 1rem 1.5rem;
-  }
-
-  .nav-inner {
-    max-width: 100%;
-    gap: 1rem;
-  }
-
-  .nav-menu {
-    gap: 1.25rem;
-  }
-
-  .nav-link {
-    font-size: 0.85rem;
-  }
-
-  .nav-logo {
-    font-size: 0.9rem;
-  }
-
-  .hero-content {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    padding-top: 25vh;
-    max-width: 90%;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    max-width: 100%;
-  }
-
-  .hero-cta-icon {
-    width: 4rem;
-  }
-}
-
-/* Mobile breakpoint */
-@media (max-width: 640px) {
-
-  /* Stack nav logo + menu */
-  .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-menu {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.75rem 1.25rem;
-    margin-top: 0.75rem;
-  }
-
-  .nav-icons {
-    padding-left: 0;
-  }
-
-  .nav-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-bottom: 3rem;
-  }
-
-  .hero-content {
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
-    padding-top: 30vh;
-  }
-
-  .hero-title {
-    font-size: 1.7rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-
-  /* Make CTA button full-width and centered-ish */
-  .hero-cta-button {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .hero-cta-icon {
-    width: 3.5rem;
-  }
-}
 
 /* STORYPAGE CSS */
 
@@ -611,13 +617,13 @@ img {
   overflow: hidden;
 }
 
-.hero-background {
+.story-hero-background {
   position: absolute;
   inset: 0;
   z-index: -2;
 }
 
-.hero-background img {
+.story-hero-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -627,17 +633,15 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.45)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.45));
   z-index: -1;
 }
 
 .story-hero-content {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 9rem 5rem 5rem;
 }
@@ -654,9 +658,27 @@ img {
   font-style: italic;
 }
 
-/* --------------------
-   Story sections
----------------------*/
+/* STORY-HERO RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  .story-hero {
+    position: relative;
+    min-height: 20vh;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .story-hero-content {
+    padding: 2rem 5rem;
+  }
+
+  .story-hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* STORY CARDS */
 
 .story-section {
   background-color: #f4f2ee;
@@ -664,7 +686,7 @@ img {
 }
 
 .story-section-inner {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 3rem;
   display: flex;
@@ -686,7 +708,7 @@ img {
 
 .story-image img {
   width: 100%;
-  max-height: 400px; 
+  max-height: 400px;
   object-fit: cover;
 }
 
@@ -700,7 +722,7 @@ img {
   font-size: 26px;
   letter-spacing: 0.12em;
   font-weight: 400;
-  color:#3a3a32
+  color: #3a3a32
 }
 
 .story-text h2 span {
@@ -714,16 +736,35 @@ img {
   color: #343434;
 }
 
+/* STORYCARDS RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  .story-card,
+  .story-card:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+
+  .story-image {
+    width: 100%;
+  }
+
+  .story-text h2 {
+    font-size: 1.25rem;
+  }
+
+}
+
 /* SOME videos track */
 
 .some-section {
   background-color: #f4f2ee;
   padding: 5rem 0 5rem;
-  border-bottom:solid 1px #b9b7b0;
+  border-bottom: solid 1px #b9b7b0;
 }
 
 .some-inner {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 3rem;
 
@@ -769,234 +810,86 @@ img {
   margin-top: 3.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --------------------
-   Blog hero
----------------------*/
-
-.blog-hero {
-  position: relative;
-  min-height: 55vh;
-  color: #ffffff;
-  overflow: hidden;
+.some-indicator {
+  display: none;
 }
 
-/* background image */
-.blog-hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
+/* SOME RESPONSIVENESS */
 
-.blog-hero-background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+@media (max-width: 640px) {
 
-.blog-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.45)
-  );
-  z-index: -1;
-}
+  .some-section {
+    padding: 3rem 0 3rem;
+  }
 
-/* hero text */
-.blog-hero-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 9rem 5rem 5rem;
-}
+  /* Stack vertically slider + CTA */
+  .some-inner {
+    max-width: 100%;
+    /* Is it necessary or can I leave it out */
+    padding-inline: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 1.5rem;
+  }
 
-.blog-hero-heading {
-  margin: 0;
-  font-size: 2.6rem;
-  font-weight: 100;
-  line-height: 1.25;
-  padding: 3em 0;
-}
+  /* Hiding arrow buttons */
+  .some-left,
+  .some-right {
+    display: none;
+  }
 
-.blog-hero-heading span {
-  display: block;
-  font-style: italic;
-}
+  /* Slider wrapper: horizontal scroll, one slide per view */
+  .some-bar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    /* enable swipe left/right */
+    scroll-snap-type: x mandatory;
+    /* snap to each slide */
+    -webkit-overflow-scrolling: touch;
+  }
 
-/* --------------------
-   Blog cards list
----------------------*/
+  /* Each slide takes full width, so others are not visible */
+  .some-video {
+    flex: 0 0 100%;
+    /* exactly 100% width of the container */
+    scroll-snap-align: center;
+    /* snap this image to center */
+  }
 
-.blog-list {
-  background-color: #f4f2ee;
-  padding: 3.5rem 0 5rem;
-}
+  .some-video img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-.blog-list-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-inline: 3rem;
+  .some-indicator {
+    border: 2px solid;
+    height: 1rem;
+    weight: 1rem;
+    color: #54604A;
 
-  display: flex;
-  gap: 2rem;
-  align-items: stretch;
-}
+  }
 
-/* single card */
+  .some-indicator is-active {
+    /* Visible with Javascript? */
+    color: #54604A;
+    transform: scale(1.25);
+    /* Does it go bigger this way when active or does it need sth in the some-indicatior */
+  }
 
-.blog-card {
-  flex: 1 1 0;
-  background-color: #f7f6f2;
-  border: 1px solid #b9b7b0;
-  border-radius: 2px;
-  overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.blog-card-image img {
-  width: 100%;
-  height: 210px;          /* adjust for how tall you want the image */
-  object-fit: cover;
-  display: block;
-}
-
-/* text block inside card */
-.blog-card-body {
-  flex: 1;
-  padding: 1.2rem 1.5rem 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.blog-card-title {
-  margin: 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.blog-card-text {
-  margin: 0;
-  font-size: 0.85rem;
-  line-height: 1.7;
-  color: #363636;
-}
-
-/* "Read more" button inside card */
-
-.blog-card-button {
-  margin-top: 1.4rem;
-  align-self: stretch;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.6rem 1rem;
-  border: 1px solid #b9b7b0;
-  background-color: #f7f6f2;
-
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.blog-card-button span {
-  white-space: nowrap;
-}
-
-.blog-card-button:hover {
-  background-color: #ffffff;
-  transform: translateY(-1px);
+  .some-indicator {
+    display: ;
+  }
 }
 
 
-
-
-
-
-
-/* -------------
-   Header
--------------- */
-
-.site-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.25rem 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-logo {
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-}
-
-.header-link {
-  font-size: 0.9rem;
-  color: #ffffff;
-  opacity: 0.9;
-  text-decoration: none;
-}
-
-.header-link:hover {
-  opacity: 1;
-}
-
-.header-icon img {
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
-/* -------------
-   Hero
--------------- */
+/* STORE STARTS HERE */
 
 .store-hero {
   position: relative;
-  min-height: 45vh;
+  max-height: 45vh;
   overflow: hidden;
 }
 
@@ -1006,21 +899,16 @@ img {
   object-fit: cover;
 }
 
-/* optional: light darken overlay for nav readability */
 .store-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.05)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.05));
 }
 
-/* -------------
-   Products grid
--------------- */
+/* Products grid */
 
 .store-products {
   padding: 4rem 0 5rem;
@@ -1028,7 +916,7 @@ img {
 }
 
 .store-products-inner {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding-inline: 3rem;
 
@@ -1103,7 +991,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.4s ease, transform 0.2s ease;
 }
 
 .product-button:hover {
@@ -1113,11 +1001,235 @@ img {
 
 /* wide card on bottom right */
 
-.product-card--wide {
+.wide {
   grid-column: span 2;
 }
 
-.product-image--wide img {
-  height: 190px;          /* taller image for the wide card */
+.wide img {
+  height: 190px;
   object-fit: cover;
+}
+
+/* IPADISH RESPONSIVENESS */
+
+@media (max-width: 1024px) {
+
+  .store-hero {
+    max-height: 20vh;
+  }
+
+  /* Stack all product cards vertically */
+  .store-products-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  /* Stack all product cards vertically */
+  .store-products-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Each product card gets full width */
+  .product-card,
+  .product-card.wide {
+    width: 100%;
+  }
+
+  /* Make images span full width */
+  .product-image img {
+    width: auto;
+    height: 200px;
+  }
+}
+
+
+
+/* (∩｀-´)⊃━☆ﾟ.*･｡ﾟ BLOG STARTS HERE */
+
+/* Blog-hero */
+
+.blog-hero {
+  position: relative;
+  min-height: 55vh;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* background image */
+.blog-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.blog-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.45));
+  z-index: -1;
+}
+
+/* hero text */
+.blog-hero-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 9rem 5rem 5rem;
+}
+
+.blog-hero-heading {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 100;
+  line-height: 1.25;
+  padding: 3em 0;
+}
+
+.blog-hero-heading span {
+  display: block;
+  font-style: italic;
+}
+
+/* Blog articles */
+
+.blog-list {
+  background-color: #f4f2ee;
+  padding: 3.5rem 0 5rem;
+}
+
+.blog-list-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-inline: 3rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* single card */
+
+.blog-card {
+  flex: 1 1 0;
+  background-color: #f7f6f2;
+  border: 1px solid #b9b7b0;
+  border-radius: 2px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+/* text block inside card */
+.blog-card-body {
+  flex: 1;
+  padding: 1.2rem 1.5rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.blog-card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-card-text {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #363636;
+}
+
+/* "Read more" button inside card */
+.blog-card-button {
+  margin-top: 1.4rem;
+  align-self: stretch;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.6rem 1rem;
+  border: 1px solid #b9b7b0;
+  background-color: #f7f6f2;
+
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.blog-card-button span {
+  white-space: nowrap;
+}
+
+.blog-card-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* IPADISH RESPONSIVENESS */
+
+@media (max-width: 1024px) {
+
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 640px) {
+
+  .blog-hero {
+    position: relative;
+    min-height: 20vh;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .blog-list-inner {
+    display: block;          /* no flex on mobile because otherwise the section collapses */
+    padding-inline: 1.5rem;
+  }
+
+  .blog-card {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .blog-card-image img {
+    display: block;
+    height: 300px;
+  }
 }

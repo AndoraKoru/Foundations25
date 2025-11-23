@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>TeaStore – Productive Blog</title>
@@ -7,67 +8,46 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+ <header class="header">
+    <!-- Logo on the left -->
+    <a href="landingPage.html" class="logo">TeaStore</a>
 
-  <!-- Header -->
-<header class="site-header">
-  <nav class="nav-outer">
-    <div class="nav-inner">
+    <!-- Right side: links + icons -->
+    <div class="header-right" id="myLinks">
 
-      <!-- Left side navigation -->
-      <a href="/" class="nav-logo">TeaStore</a>
+      <!-- Navigation links -->
+      <div class="nav-menu">
+        <a class="active" href="landingPage.html">Home</a>
+        <a href="storyPage.html">Our Story</a>
+        <a href="storePage.html">The Store</a>
+        <a href="blogPage.html">Blog</a>
+        <a href="contactPage.html">Contact</a>
+      </div>
 
-      <!-- Right side navigation -->
-      <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="landingPage.html" class="nav-link">Homepage</a>
-          </li>
-          <li class="nav-item">
-            <a href="storyPage.html" class="nav-link">Our Story</a>
-          </li>
-          <li class="nav-item">
-            <a href="storePage.html" class="nav-link">The Store</a>
-          </li>
-          <li class="nav-item">
-            <a href="blogPage.html" class="nav-link">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="contactPage.html" class="nav-link">Contact</a>
-          </li>
-                
+      <!-- Icons -->
+      <div class="nav-icons">
+        <a href="#account" class="nav-icon" aria-label="Account">
+          <img src="/Icons/account.svg" alt="" class="nav-icon-image" aria-hidden="true">
+        </a>
+        <a href="#cart" class="nav-icon" aria-label="Cart">
+          <img src="/Icons/cart.svg" alt="" class="nav-icon-image" aria-hidden="true">
+        </a>
+      </div>
 
-          <div class = "nav-icons">
-            <li class="nav-item">
-              <a href="#account" class="nav-icon" aria-label="Account">
-                <img
-                  src="/Icons/account.svg"
-                  alt=""
-                  class="nav-icon-image"
-                  aria-hidden="true"
-                >
-              </a>
-            </li>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
 
-            <li class="nav-item">
-              <a href="#cart" class="nav-icon" aria-label="Cart">
-                <img
-                  src="/Icons/cart.svg"
-                  alt=""
-                  class="nav-icon-image"
-                  aria-hidden="true"
-                >
-              </a>
-            </li>
-          </div>
-        </ul>
     </div>
-  </nav>
-</header>
+  </header>
 
   <main>
 
@@ -151,4 +131,5 @@
   </footer>
 
 </body>
+
 </html>

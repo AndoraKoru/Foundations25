@@ -1,85 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>The Tea Store Landing Page</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="hamburger" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
 <body>
-  
-  <!-- Header -->
-<header class="site-header">
-  <nav class="nav-outer">
-    <div class="nav-inner">
 
-      <!-- Left side navigation -->
-      <a href="/" class="nav-logo">TeaStore</a>
+ <header class="header">
+    <!-- Logo on the left -->
+    <a href="landingPage.html" class="logo">TeaStore</a>
 
-      <!-- Right side navigation -->
-      <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="landingPage.html" class="nav-link">Homepage</a>
-          </li>
-          <li class="nav-item">
-            <a href="storyPage.html" class="nav-link">Our Story</a>
-          </li>
-          <li class="nav-item">
-            <a href="storePage.html" class="nav-link">The Store</a>
-          </li>
-          <li class="nav-item">
-            <a href="blogPage.html" class="nav-link">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="contactPage.html" class="nav-link">Contact</a>
-          </li>
+    <!-- Right side: links + icons -->
+    <div class="header-right" id="myLinks">
 
-          <div class = "nav-icons">
-            <li class="nav-item">
-              <a href="#account" class="nav-icon" aria-label="Account">
-                <img
-                  src="/Icons/account.svg"
-                  alt=""
-                  class="nav-icon-image"
-                  aria-hidden="true"
-                >
-              </a>
-            </li>
+      <!-- Navigation links -->
+      <div class="nav-menu">
+        <a class="active" href="landingPage.html">Home</a>
+        <a href="storyPage.html">Our Story</a>
+        <a href="storePage.html">The Store</a>
+        <a href="blogPage.html">Blog</a>
+        <a href="contactPage.html">Contact</a>
+      </div>
 
-            <li class="nav-item">
-              <a href="#cart" class="nav-icon" aria-label="Cart">
-                <img
-                  src="/Icons/cart.svg"
-                  alt=""
-                  class="nav-icon-image"
-                  aria-hidden="true"
-                >
-              </a>
-            </li>
-          </div>
+      <!-- Icons -->
+      <div class="nav-icons">
+        <a href="#account" class="nav-icon" aria-label="Account">
+          <img src="/Icons/account.svg" alt="" class="nav-icon-image" aria-hidden="true">
+        </a>
+        <a href="#cart" class="nav-icon" aria-label="Cart">
+          <img src="/Icons/cart.svg" alt="" class="nav-icon-image" aria-hidden="true">
+        </a>
+      </div>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+
     </div>
-  </nav>
-</header>
-<main>
+  </header>
 
+  </main>
 
-</main>
-<body>
+  <body>
 
-<!-- Hero -->
+    <!-- Hero -->
     <section class="story-hero">
-      <div class="hero-background">
+      <div class="story-hero-background">
         <img src="/Images/templeTwo.jpg" alt="Tea room interior">
       </div>
 
       <div class="story-hero-content">
         <h1 class="story-hero-title">
-          Hi! This is how <span>our story grew</span>
+          Hi! This is how <span>our community grew</span>
         </h1>
       </div>
     </section>
@@ -95,12 +78,15 @@
           <div class="story-text">
             <h2>OUR TEA IS <span>NOT</span> FOR EVERYONE</h2>
             <p>
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.”
+              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur.”
             </p>
           </div>
         </div>
 
-    <!-- Second feature row -->
+        <!-- Second feature row -->
         <div class="story-card">
           <div class="story-image">
             <img src="/Images/templeThree.jpg" alt="Us in Kyoto">
@@ -108,7 +94,10 @@
           <div class="story-text">
             <h2>OUR TEA IS <span>NOT</span> FOR EVERYONE</h2>
             <p>
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.”
+              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur.”
             </p>
           </div>
         </div>
@@ -116,7 +105,6 @@
 
     </section>
 
-    <!-- Image slider look-alike -->
     <section class="some-section">
       <div class="some-inner">
 
@@ -126,7 +114,7 @@
 
         <div class="some-bar">
           <div class="some-video">
-            <img src="/Images/harvestFuji.jpg" alt=""> 
+            <img src="/Images/harvestFuji.jpg" alt="">
           </div>
           <div class="some-video">
             <img src="/Images/harvestFuji.jpg" alt="Leaf artwork">
@@ -139,15 +127,21 @@
         <button class="some-right" aria-label="Next post">
           →
         </button>
+
+         <div class="some-indicators">
+          <button class="some-indicator is-active" aria-label="Slide 1"></button>
+          <button class="some-indicator" aria-label="Slide 2"></button>
+          <button class="some-indicator" aria-label="Slide 3"></button>
         </div>
-          <div class="store-cta">
-            <a href="/store" class="store-button">
-              <span>To the store</span>
-            </a>
-        </div>      
+      </div>
+      <div class="store-cta">
+        <a href="storePage.html" class="store-button">
+          <span>To the store</span>
+        </a>
+      </div>
     </section>
-    
-</body>
+
+  </body>
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-nav">
@@ -167,6 +161,7 @@
       </a>
     </div>
   </footer>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

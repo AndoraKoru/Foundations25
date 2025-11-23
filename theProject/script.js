@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const parallaxEls = document.querySelectorAll("[data-parallax]");
   if (!parallaxEls.length) return;
@@ -60,4 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateParallax);
   updateParallax();
 });
+
+
+
+
+
+
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "flex" || x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";  // keep flex so it uses the flex-direction from CSS
+  }
+}
 
