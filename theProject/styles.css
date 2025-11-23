@@ -334,7 +334,6 @@ header .icon {
 
 .reasons-media img {
   object-fit: cover;
-  /* Why this */
 }
 
 .reasons-text h2 {
@@ -880,7 +879,7 @@ header .icon {
   }
 
   .some-indicator {
-    display: ;
+    display: none;
   }
 }
 
@@ -1201,9 +1200,7 @@ header .icon {
 
 /* IPADISH RESPONSIVENESS */
 
-@media (max-width: 1024px) {
-
-}
+@media (max-width: 1024px) {}
 
 
 /* MOBILE RESPONSIVENESS */
@@ -1218,7 +1215,8 @@ header .icon {
   }
 
   .blog-list-inner {
-    display: block;          /* no flex on mobile because otherwise the section collapses */
+    display: block;
+    /* no flex on mobile because otherwise the section collapses */
     padding-inline: 1.5rem;
   }
 
