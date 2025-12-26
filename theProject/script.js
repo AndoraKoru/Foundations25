@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let translateY = scrollY * speed * -1;              // move slightly up
 
       // clamp so we never move beyond the extra height
-      const maxOffset = 120; // px – adjust if needed
+      const maxOffset = 120; 
       if (translateY < -maxOffset) translateY = -maxOffset;
       if (translateY > maxOffset) translateY = maxOffset;
 

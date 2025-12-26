@@ -1231,3 +1231,57 @@ header .icon {
     height: 300px;
   }
 }
+
+
+
+
+
+
+/* (∩｀-´)⊃━☆ﾟ.*･｡ﾟ CONTACT PAGE STARTS HERE */
+
+.contact-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.contact-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.45));
+  z-index: -1;
+}
+
+/* hero text */
+.contact-hero-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 9rem 5rem 5rem;
+}
+
+.contact-hero-heading {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 100;
+  line-height: 1.25;
+  padding: 3em 0 0.4em 0;
+  color: #f1efe9;
+}
+
+.contact-hero-content a {
+  font-size: 1.5rem;
+  font-weight: 100;
+  line-height: 1.25;
+  padding: 0 2em 0 0;
+  color: #f1efe9;  
+}
