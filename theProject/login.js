@@ -1,22 +1,44 @@
 import { auth } from "./firebase.js";
 import {
-  signInWithEmailAndPassword
+  sendSignInLinkToEmail,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
-const form = document.querySelector("#loginForm");
-const statusEl = document.querySelector("#status");
+const form = document.getElementById("emailLinkForm");
+const statusEl = document.getElementById("status");
+const rememberCheckbox = document.getElementById("rememberMe"); // optional (only if you have it)
+
+function setStatus(msg) {
+  if (statusEl) statusEl.textContent = msg;
+}
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  statusEl.textContent = "Signing in…";
 
   const email = form.email.value.trim();
-  const password = form.password.value;
+  if (!email) {
+    setStatus("Please enter an email.");
+    return;
+  }
+
+  setStatus("Sending sign-in link…");
 
   try {
-    await signInWithEmailAndPassword(auth, email, password);
-    window.location.href = "storePage.html";
+    const actionCodeSettings = {
+      url: `${window.location.origin}/emailLinkFinish.html`,
+      handleCodeInApp: true
+    };
+
+    await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+
+    // Store email so we can finish sign-in when the user clicks the link
+    localStorage.setItem("emailForSignIn", email);
+
+    setStatus("Link sent. Check your email.");
   } catch (err) {
-    statusEl.textContent = err.message;
+    console.error(err);
+    setStatus(err.message);
   }
 });
