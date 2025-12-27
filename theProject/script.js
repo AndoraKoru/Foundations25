@@ -64,9 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "flex" || x.style.display === "block") {
@@ -75,4 +72,7 @@ function myFunction() {
     x.style.display = "flex";  // keep flex so it uses the flex-direction from CSS
   }
 }
+
+
+
 

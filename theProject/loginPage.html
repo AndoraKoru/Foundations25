@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Contact page</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
@@ -32,7 +29,7 @@
         <a href="storyPage.html">Our Story</a>
         <a href="storePage.html">The Store</a>
         <a href="blogPage.html">Blog</a>
-        <a class="active" href="contactPage.html">Contact</a>
+        <a href="contactPage.html">Contact</a>
       </div>
 
       <!-- Icons -->
@@ -48,23 +45,38 @@
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
+
     </div>
   </header>
- <main>
-     <!-- Hero -->
-    <section class="contact-hero"> 
-      <div class="contact-hero-background">
-        <img src="/Images/templeTwo.jpg" alt="Tea room interior">
-      </div>
 
-      <div class="contact-hero-content">
-        <h1 class="contact-hero-heading">
-          Get in touch <span>with us</span>
-        </h1>
-          <a class="contact-mail" href="mailto:usin.alexandra@gmail.com">usin.alexandra@gmail.com</a>
-          <a class="contact-phone" href="tel:+37253012307">+372 53012307</a>
+  <main>
+
+    <!-- Hero section -->
+    <section class="hero-login">
+      <div class="hero-login-background-image" data-parallax data-speed="0.05">
+        <img src="/Images/tatamiKoridor.jpg" alt="Japanese tea image" />
       </div>
+    
+      <section class="auth-card" aria-label="Sign in">
+      <h1 class="auth-title">Sign in</h1>
+      <p class="auth-subtitle">We will email you a secure sign-in link!</p>
+
+      <form class="auth-form" id="emailLinkForm" novalidate>
+
+        <input
+          class="auth-input"
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder=""
+          required
+        />
+
+        <button class="auth-button" type="submit">SIGN IN</button>
+
+        <p class="auth-status" id="status" role="status" aria-live="polite"></p>
+      </form>
     </section>
-</main>
 </body>
 </html>
