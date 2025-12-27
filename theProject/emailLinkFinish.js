@@ -1,4 +1,3 @@
-// js/emailLinkFinish.js
 import { auth } from "./firebase.js";
 import {
   isSignInWithEmailLink,
