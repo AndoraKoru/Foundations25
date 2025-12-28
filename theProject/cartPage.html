@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeaStore - Cart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="landingPage.html" class="logo">TeaStore</a>
+
+        <div class="header-right" id="myLinks">
+            <div class="nav-menu">
+                <a href="landingPage.html">Home</a>
+                <a href="storyPage.html">Our Story</a>
+                <a href="storePage.html">The Store</a>
+                <a href="blogPage.html">Blog</a>
+                <a href="contactPage.html">Contact</a>
+            </div>
+
+            <div class="nav-icons">
+                <a href="accountPage.html" class="nav-icon" aria-label="Account">
+                    <img src="/Icons/account.svg" alt="" class="nav-icon-image" aria-hidden="true">
+                </a>
+                <a href="cartPage.html" class="nav-icon" aria-label="Cart">
+                    <img src="/Icons/cart.svg" alt="" class="nav-icon-image" aria-hidden="true">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="cart-hero">
+            <div class="cart-hero-bg">
+                <img src="/Images/paintingRoom.jpg" alt="Tea room view" />
+            </div>
+            <div class="cart-hero-content">
+                <h1 class="cart-hero-title">Your cart</h1>
+            </div>
+        </section>
+
+        <!-- Cart panel -->
+        <section class="cart">
+            <div class="cart-panel">
+
+                <!-- Left items -->
+                <div class="cart-items" aria-label="Cart items">
+
+                    <!-- JS will inject teas here-->
+                    <div id="cartItems"></div>
+
+                    <!-- Empty cart -->
+                    <div class="cart-empty" id="cartEmpty" hidden>
+                        <p>Your cart is empty.</p>
+                        <a class="cart-empty-link" href="storePage.html">Go to the store</a>
+                    </div>
+
+                    <!-- Template for a product -->
+                    <template id="cartItemTemplate">
+                        <article class="cart-item" data-product-id="">
+                            <div class="cart-item-thumb" aria-hidden="true">
+                                <img class="cart-item-img" src="" alt="">
+                            </div>
+
+                            <div class="cart-item-info">
+                                <h2 class="cart-item-title"></h2>
+                                <p class="cart-item-price"></p>
+
+                                <div class="qty" aria-label="Quantity controls">
+                                    <button class="qty-btn-dec" type="button" aria-label="Decrease quantity">−</button>
+                                    <span class="qty-value" aria-label="Quantity">1</span>
+                                    <button class="qty-btn-inc" type="button" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </article>
+                    </template>
+
+                </div>
+
+                <!-- Divider -->
+                <div class="cart-divider" aria-hidden="true"></div>
+
+                <!-- Right: summary -->
+                <aside class="cart-summary" aria-label="Order summary">
+
+                    <p class="summary-items">
+                        <span class="summary-label">
+                            ITEMS (<span id="itemsCount">0</span>)
+                        </span>
+                    </p>
+
+                    <dl class="summary-list" aria-label="Totals">
+                        <div class="summary-row">
+                            <dt>Subtotal</dt>
+                            <dd id="subtotal">0€</dd>
+                        </div>
+
+                        <div class="summary-row">
+                            <dt>Tax</dt>
+                            <dd id="tax">0€</dd>
+                        </div>
+
+                        <div class="summary-row summary-row--total">
+                            <dt>Total</dt>
+                            <dd id="total">0€</dd>
+                        </div>
+                    </dl>
+
+                    <!-- disabled by default, enabled when cart has items -->
+                    <button class="summary-checkout" type="button" id="checkoutBtn" disabled>
+                        Checkout
+                    </button>
+
+                    <p class="summary-note" id="checkoutNote">
+                        Payment is processed on the next page.
+                    </p>
+
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-nav">
+            <a href="landingPage.html">Homepage</a>
+            <a href="storyPage.html">Our Story</a>
+            <a href="storePage.html">The Store</a>
+            <a href="contactPage.html">Contact</a>
+        </div>
+
+        <div class="container footer-social">
+            <a href="#" aria-label="Instagram">
+                <img src="/Icons/instagram.svg" alt="" class="footer-icon">
+            </a>
+            <a href="#" aria-label="Facebook">
+                <img src="/Icons/facebook.svg" alt="" class="footer-icon">
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
