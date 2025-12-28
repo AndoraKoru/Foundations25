@@ -77,3 +77,64 @@ async function loadProducts() {
 }
 
 loadProducts();
+
+
+
+
+
+const CART_KEY = "teastore_cart";
+
+function readCart() {
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeCart(items) {
+  localStorage.setItem(CART_KEY, JSON.stringify(items));
+}
+
+function addToCart(productId, amount = 1) {
+  const cart = readCart();
+
+  const existing = cart.find(item => item.productId === productId);
+
+  if (existing) {
+    existing.qty = Number(existing.qty || 0) + amount;
+  } else {
+    cart.push({ productId, qty: amount });
+  }
+
+  writeCart(cart);
+  return cart;
+}
+
+
+
+if (mount) {
+  mount.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-add]");
+    if (!btn) return;
+
+    const productId = btn.dataset.add;
+    if (!productId) return;
+
+    addToCart(productId, 1);
+
+    // feedback
+    const original = btn.textContent;
+    btn.textContent = "Added";
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.disabled = false;
+    }, 700);
+
+    console.log("Cart:", readCart());
+  });
+}
