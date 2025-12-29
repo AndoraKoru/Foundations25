@@ -138,3 +138,43 @@ if (mount) {
     console.log("Cart:", readCart());
   });
 }
+
+
+
+// Quotes
+
+async function loadDailyQuote() {
+  const quoteEl = document.getElementById("dailyQuoteText");
+  const authorEl = document.getElementById("dailyQuoteAuthor");
+  if (!quoteEl || !authorEl) return;
+
+  // fallback
+  const fallback = {
+    text: "Tea is a small ritual that makes the day feel intentional.",
+    author: "Alexandra"
+  };
+
+  quoteEl.textContent = "Loading…";
+  authorEl.textContent = "";
+
+  try {
+    const res = await fetch("https://motivational-spark-api.vercel.app/api/quotes/random", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const data = await res.json();
+
+    quoteEl.textContent = `“${data.quote}”`;
+    authorEl.textContent = `— ${data.author || "Unknown"}`;
+  } catch (err) {
+    
+    // fallback on error
+    quoteEl.textContent = `“${fallback.text}”`;
+    authorEl.textContent = `— ${fallback.author}`;
+    console.warn("Quote API failed, showing fallback:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadDailyQuote);
+
+
+

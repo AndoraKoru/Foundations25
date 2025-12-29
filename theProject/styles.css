@@ -887,26 +887,64 @@ header .icon {
 
 .store-hero {
   position: relative;
-  max-height: 45vh;
+  height: 45vh;
+  min-height: 320px;
   overflow: hidden;
 }
 
-.store-hero img {
+.store-hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .store-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.05));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: 1;
 }
 
-/* Products grid */
+.store-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.store-hero-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.store-hero-quote {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 2rem); /* apparently a modern way – minimum, preferred, maximum */
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.store-hero-author {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
 
 .store-products {
   padding: 4rem 0 5rem;
@@ -1011,9 +1049,9 @@ header .icon {
 /* IPADISH RESPONSIVENESS */
 
 @media (max-width: 1024px) {
-
   .store-hero {
-    max-height: 20vh;
+    height: 28vh;
+    min-height: 220px;
   }
 
   /* Stack all product cards vertically */
@@ -1028,6 +1066,7 @@ header .icon {
 /* MOBILE RESPONSIVENESS */
 
 @media (max-width: 640px) {
+  
 
   /* Stack all product cards vertically */
   .store-products-inner {
