@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeaStore - Payment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <a href="landingPage.html" class="logo">TeaStore</a>
+
+    <div class="header-right">
+      <div class="nav-menu">
+        <a href="landingPage.html">Home</a>
+        <a href="storyPage.html">Our Story</a>
+        <a href="storePage.html">The Store</a>
+        <a href="blogPage.html">Blog</a>
+        <a href="contactPage.html">Contact</a>
+      </div>
+
+      <div class="nav-icons">
+        <a href="accountPage.html" class="nav-icon" aria-label="Account">
+          <img src="/Icons/account.svg" alt="" class="nav-icon-image" aria-hidden="true">
+        </a>
+        <a href="cartPage.html" class="nav-icon" aria-label="Cart">
+          <img src="/Icons/cart.svg" alt="" class="nav-icon-image" aria-hidden="true">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="payment">
+      <div class="payment-card">
+        <h1 class="payment-title">Payment</h1>
+        <p class="payment-lead">This is a dummy payment page for the university project.</p>
+
+        <div class="payment-summary" aria-label="Invoice summary">
+          <p class="payment-row">
+            <span class="payment-label">Invoice</span>
+            <span class="payment-value" id="invoiceNumber">—</span>
+          </p>
+
+          <p class="payment-row">
+            <span class="payment-label">Total</span>
+            <span class="payment-value" id="invoiceTotal">—</span>
+          </p>
+
+          <p class="payment-row">
+            <span class="payment-label">Status</span>
+            <span class="payment-value" id="invoiceStatus">—</span>
+          </p>
+        </div>
+
+        <button class="payment-button" id="payBtn" type="button">
+          Pay 
+        </button>
+
+        <p class="payment-status" id="payStatus" role="status" aria-live="polite"></p>
+
+        <a class="payment-link" href="cartPage.html">Back to cart</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="paymentPage.js"></script>
+</body>
+</html>
