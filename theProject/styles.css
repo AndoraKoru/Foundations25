@@ -1046,6 +1046,36 @@ header .icon {
   object-fit: cover;
 }
 
+/* filter */
+
+#price-sort {
+  padding: 2em 3em;
+  font-family: "Montserrat", system-ui, sans-serif;
+  background-color: #f4f2ee;
+}
+
+#price-sort label {
+  font-size: 1rem;
+}
+
+#priceSort {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+
+  cursor: pointer;
+  font-family: "Montserrat", system-ui, sans-serif;
+
+}
+
+#priceSort:focus {
+  outline: none;
+  border-color: #54604A;
+}
+
 /* IPADISH RESPONSIVENESS */
 
 @media (max-width: 1024px) {
@@ -2097,4 +2127,5 @@ header .icon {
   color: #54604A;
   cursor: pointer;
 }
+
 

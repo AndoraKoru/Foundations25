@@ -6,6 +6,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const mount = document.getElementById("productsMount");
+const priceSortSelect = document.getElementById("priceSort");
+
+let allProducts = [];
+let currentSort = "default";
 
 function formatPrice(priceCents, currency = "EUR") {
   return new Intl.NumberFormat("en-GB", { style: "currency", currency }).format(priceCents / 100);
@@ -53,6 +57,20 @@ function cardHTML(p) {
   `;
 }
 
+function renderProducts() {
+  if (!mount) return;
+
+  const list = allProducts.slice();
+
+  if (currentSort === "asc") {
+    list.sort((a, b) => (a.price_cents ?? 0) - (b.price_cents ?? 0));
+  } else if (currentSort === "desc") {
+    list.sort((a, b) => (b.price_cents ?? 0) - (a.price_cents ?? 0));
+  }
+
+  mount.innerHTML = list.map(cardHTML).join("");
+}
+
 async function loadProducts() {
   if (!mount) return;
 
@@ -62,25 +80,30 @@ async function loadProducts() {
     const q = query(collection(db, "products"));
     const snap = await getDocs(q);
 
-    const products = snap.docs.map(doc => ({
+    allProducts = snap.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
     }));
 
-    mount.innerHTML = products.map(cardHTML).join("");
+    // Respect current dropdown value if present
+    currentSort = (priceSortSelect && priceSortSelect.value) ? priceSortSelect.value : "default";
+    renderProducts();
 
-} catch (err) {
-  console.error(err);
-  mount.innerHTML = `<p>Could not load products: ${err.code ?? ""} ${err.message ?? err}</p>`;
-}
-
+  } catch (err) {
+    console.error(err);
+    mount.innerHTML = `<p>Could not load products: ${err.code ?? ""} ${err.message ?? err}</p>`;
+  }
 }
 
 loadProducts();
 
-
-
-
+// Sorting UI (no reload)
+if (priceSortSelect) {
+  priceSortSelect.addEventListener("change", (e) => {
+    currentSort = e.target.value || "default";
+    renderProducts();
+  });
+}
 
 const CART_KEY = "teastore_cart";
 
@@ -113,8 +136,6 @@ function addToCart(productId, amount = 1) {
   return cart;
 }
 
-
-
 if (mount) {
   mount.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-add]");
@@ -138,8 +159,6 @@ if (mount) {
     console.log("Cart:", readCart());
   });
 }
-
-
 
 // Quotes
 
@@ -166,7 +185,7 @@ async function loadDailyQuote() {
     quoteEl.textContent = `“${data.quote}”`;
     authorEl.textContent = `— ${data.author || "Unknown"}`;
   } catch (err) {
-    
+
     // fallback on error
     quoteEl.textContent = `“${fallback.text}”`;
     authorEl.textContent = `— ${fallback.author}`;
@@ -175,6 +194,3 @@ async function loadDailyQuote() {
 }
 
 document.addEventListener("DOMContentLoaded", loadDailyQuote);
-
-
-
