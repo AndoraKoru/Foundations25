@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const parallaxEls = document.querySelectorAll("[data-parallax]");
   if (!parallaxEls.length) return;

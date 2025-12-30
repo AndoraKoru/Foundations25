@@ -11,13 +11,12 @@ let productImage;
 // Firebase products cache
 let products = [];
 
+// timing, first 10sec after going on the store page and then after 8 minutes
+const FIRST_SHOW_DELAY_MS = 10_000;
+const NEXT_SHOW_AFTER_CLOSE_MS = 8 * 60_000;
 
 function getRandomTime() {
-    return Math.floor(Math.random() * 59) + 1;
-}
-
-function getRandomDisplayTime() {
-    return Math.random() * (8 - 3) + 3;
+    return Math.floor(Math.random() * 10) + 1; // inbetween short time
 }
 
 function getRandomItemFromArray(arr) {
@@ -69,18 +68,17 @@ async function initFakeAlert(db) {
 
     closeAlertBtn.addEventListener("click", () => {
         productAlert.style.display = "none";
-
-        setTimeout(
-            showAlert,
-            Math.floor(getRandomDisplayTime()) * 1000
-        );
+        setTimeout(showAlert, NEXT_SHOW_AFTER_CLOSE_MS);
     });
 
+    // 10 seconds after being on the page
+    setTimeout(showAlert, FIRST_SHOW_DELAY_MS);
 
-    setTimeout(
-        showAlert,
-        Math.floor(getRandomDisplayTime()) * 1000
-    );
+    // again 8 minutes later
+    closeAlertBtn.addEventListener("click", () => {
+        productAlert.style.display = "none";
+        setTimeout(showAlert, NEXT_SHOW_AFTER_CLOSE_MS);
+    });
 }
 
 initFakeAlert(db);
