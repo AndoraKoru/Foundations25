@@ -138,42 +138,113 @@ header {
   font-weight: 600;
 }
 
-/*https://www.w3schools.com/howto/howto_js_mobile_navbar.asp he link I learned from. However, the hamburger icon does not appear. */
+/* NAV – HAMBURGER */
 
-/* Hamburger icon – hidden on big screens */
-header .icon {
-  display: none;
-  font-size: 1.4rem;
-  color: #f7f3ea;
-  text-decoration: none;
+.off-screen-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;;
 }
+
+.mobile-links {
+  padding: 20px;
+  font-size: 1rem;
+  color: #cbc4c4;
+}
+
+.off-screen-menu {
+  /* display: none; */
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  color: #222;
+
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items:flex-start;
+  text-align: flex-start;
+  font-size: 3rem;
+  transition: 0.3s ease;
+  padding-top: 2em;
+  padding-left: 1.5em;
+}
+
+.off-screen-menu.active {
+  right: 0;
+}
+
+.ham-nav {
+  display: none;
+}
+
+.ham-menu {
+  height: 20px;
+  width: 20px;
+  margin-left: auto;
+  position: relative;
+}
+
+.ham-menu span {
+  height: 2px;
+  width: 100%;
+  background-color:#cbc4c4;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 
 /* NAVIGATION RESPONSIVENESS */
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
 
-  /* Show hamburger on small screens */
-  header .icon {
-    display: block;
+  .header {
+    padding: 2em;
+  }
+  .ham-nav {
+    display: flex;
+    align-items: center;
   }
 
-  /* Hide right side (links + icons) by default */
-  #myLinks {
-    display: none;
-    /* hidden until toggled */
-    flex-direction: column;
-    /* when shown, stack content vertically */
-    align-items: flex-end;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
-  }
-
-  /* Stack links vertically */
   .nav-menu {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
+    display: none;
   }
+
+  .nav-menu {
+    display: none;
+  }
+
+
 }
 
 /* HERO SECTION */
@@ -570,20 +641,21 @@ header .icon {
 
 @media (max-width: 1024px) {
 
-    .store-button  {
+  .store-button {
     padding: 20px;
   }
 
-    .store-button span {
+  .store-button span {
     margin: 1em 2em;
   }
 }
 
 @media (max-width: 640px) {
 
-    .store-button  {
+  .store-button {
     padding: 0;
   }
+
   .store-button span {
     font-size: 0.6rem;
   }
