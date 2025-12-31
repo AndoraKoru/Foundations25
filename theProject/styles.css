@@ -357,7 +357,7 @@ header {
   }
 
   .hero-home-content {
-    margin: 1rem 6rem;
+    padding: 8rem 1.5em;
   }
 
   .hero-title {
@@ -764,7 +764,7 @@ header {
   }
 
   .story-hero-content {
-    padding: 2rem 5rem;
+    padding: 2rem 0rem;
     margin: 5em;
   }
 
@@ -1378,15 +1378,13 @@ header {
   background-color: #ffffff;
   transform: translateY(-1px);
 }
-
-/* IPADISH RESPONSIVENESS */
-
-@media (max-width: 1024px) {}
-
-
 /* MOBILE RESPONSIVENESS */
 
 @media (max-width: 640px) {
+
+  .blog-hero-content {
+  padding: 1em 3em;
+}
 
   .blog-hero {
     position: relative;
@@ -1437,8 +1435,8 @@ header {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.45));
   z-index: -1;
 }
@@ -1579,7 +1577,7 @@ header {
 }
 
 
-/* Responsiveness: center card on smaller screens */
+/* Responsiveness*/
 @media (max-width: 900px) {
   .auth-card {
     margin: 12vh auto 0;
@@ -1588,6 +1586,14 @@ header {
 }
 
 @media (max-width: 480px) {
+  .contact-hero-content {
+  padding: 20rem 2rem;
+}
+ .contact-hero-heading {
+  padding: 0;
+  margin: 0;
+}
+
   .auth-card {
     padding: 36px 22px;
   }
